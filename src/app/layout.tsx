@@ -25,3 +25,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 		</html>
 	);
 }
+
+
+
+// src/
+// ├── app/              # rutas (Next)
+// ├── components/       # UI reutilizable
+// ├── sections/         # bloques de la página (Hero, RSVP...)
+// ├── hooks/            # custom hooks
+// ├── lib/              # utilidades
+// ├── types/            # tipos TS
+// ├── styles/           # scss global (variables, mixins)
+// └── assets/           # imágenes, fuentes locales
+
+
+// requerido:
+// GSAP + Spline
+// Framer Motion
