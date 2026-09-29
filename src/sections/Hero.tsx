@@ -1,0 +1,41 @@
+import ScrollHint from "@/components/ScrollHint";
+
+export default function Hero() {
+
+	const DEFAULT_PHOTO = '/photo.jpg'; // coloca photo.jpg en /public
+
+	return (
+		<section className="slide slide-hero" id="s1">
+			<div className="texture-dots" />
+
+			<div className="hero-top">
+				<div className="logo-geresa">GERESA Cusco</div>
+				<div className="hero-year">2026</div>
+			</div>
+
+			<div className="hero-grid">
+				<div className="hero-center">
+					<div className="section-eyebrow">Invitación Institucional</div>
+					<h1 className="hero-title">
+						LXIX Aniversario
+						<br />
+						Institucional
+					</h1>
+					<div className="hero-divider" />
+					<p className="hero-subtitle">y Homenaje al Señor de los Milagros</p>
+				</div>
+
+				<div className="hero-photo">
+					<img src={DEFAULT_PHOTO} alt="Señor de los Milagros" />
+					<div className="hero-photo-overlay" />
+				</div>
+			</div>
+
+			<div className="hero-footer">
+				Gerencia Regional de Salud Cusco · Dirección Ejecutiva de Inteligencia Sanitaria
+			</div>
+
+			<ScrollHint />
+		</section>
+	)
+}

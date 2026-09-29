@@ -1,7 +1,1176 @@
-$primary: #c9a961;
+// ============================================================
+//  Invitación LXIX Aniversario GERESA — estilos globales (SCSS)
+// ============================================================
 
+// ---------- Variables ----------
+$morado-profundo: #2e1a47;
+$morado: #3b1e5a;
+$morado-medio: #5b3a82;
+$morado-suave: #7b5ea7;
+$dorado: #c9a227;
+$dorado-claro: #e8d9a0;
+$marfil: #f9f6f0;
+$gris: #5a5a5a;
+$blanco: #ffffff;
+$max-w: 1180px;
+
+// Las variables --font-* las inyecta next/font en layout.tsx
+$font-body: var(--font-montserrat), 'Montserrat', sans-serif;
+$font-display: var(--font-cormorant), 'Cormorant Garamond', serif;
+
+// ---------- Mixins ----------
+@mixin tablet {
+  @media (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin short-screen {
+  @media (max-height: 700px) and (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// ---------- Reset ----------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
 body {
-	font-family: sans-serif;
-	background: #faf8f3;
-	color: $primary;
+  height: 100%;
+  overflow: hidden;
+  font-family: $font-body;
+  background: $morado-profundo;
+  color: $morado-profundo;
+  overscroll-behavior: none;
+}
+
+// ============ CONTENEDOR SCROLL SNAP ============
+.snap-container {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  @include hide-scrollbar;
+}
+
+.slide {
+  min-height: 100vh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 24px 70px;
+  overflow: hidden;
+
+  &.scrollable {
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding-top: 60px;
+    @include hide-scrollbar;
+  }
+}
+
+// En desktop, cada slide tiene ancho máximo centrado
+.slide-inner {
+  width: 100%;
+  max-width: $max-w;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+// ============ NAV DOTS ============
+.nav-dots {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  a {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba($blanco, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &.active {
+      background: $dorado;
+      height: 20px;
+      border-radius: 3px;
+    }
+  }
+}
+
+// ============ SCROLL HINT ============
+.scroll-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $dorado;
+  font-size: 1.4rem;
+  animation: bounce 2s infinite;
+  z-index: 5;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 1;
+  }
+}
+
+// ============ TEXTURAS ============
+.texture-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba($dorado, 0.15) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+// ============ TIPOGRAFÍA BASE ============
+.section-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: $dorado;
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-align: center;
+
+  &--light {
+    color: $dorado-claro;
+  }
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: $morado-profundo;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  text-align: center;
+
+  &--tight {
+    margin-bottom: 6px;
+  }
+}
+
+// ============ 1. HERO ============
+.slide-hero {
+  background: linear-gradient(160deg, $morado-profundo 0%, $morado 55%, $morado-medio 100%);
+  color: $blanco;
+  text-align: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba($dorado, 0.22) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: $max-w;
+  margin: 0 auto;
+
+  .hero-year {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: $dorado-claro;
+    border: 1px solid rgba($dorado, 0.5);
+    padding: 5px 10px;
+    border-radius: 20px;
+  }
+}
+
+.logo-geresa {
+  font-family: $font-display;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: $dorado-claro;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    border: 1.5px solid $dorado;
+    border-radius: 50%;
+  }
+}
+
+// Hero grid: 1 col en mobile, 2 col en desktop
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: $max-w;
+  margin: 0 auto;
+}
+
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: $font-display;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.05;
+  background: linear-gradient(180deg, #ffffff 0%, $dorado-claro 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba($blanco, 0.85);
+  font-style: italic;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: $dorado;
+  position: relative;
+  margin: 4px 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    background: $dorado;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: -12px;
+  }
+
+  &::after {
+    right: -12px;
+  }
+}
+
+.hero-photo {
+  position: relative;
+  border-radius: 200px 200px 16px 16px;
+  overflow: hidden;
+  border: 1px solid rgba($dorado, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    display: block;
+    height: 180px;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.05);
+  }
+}
+
+.hero-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba($morado-profundo, 0.6) 100%);
+}
+
+.hero-footer {
+  position: relative;
+  z-index: 2;
+  font-size: 0.75rem;
+  color: rgba($blanco, 0.7);
+  font-weight: 300;
+  line-height: 1.7;
+  text-align: center;
+  max-width: $max-w;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// ============ 2. INVITACIÓN ============
+.slide-invitacion {
+  background: linear-gradient(180deg, $marfil 0%, #f0e8f5 100%);
+  text-align: center;
+
+  p {
+    font-size: 0.9rem;
+    color: $gris;
+    margin-bottom: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+
+  .destacado {
+    color: $morado;
+    font-weight: 500;
+  }
+}
+
+.invitacion-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.invitacion-texto-wrap {
+  text-align: center;
+}
+
+.foto-secundaria {
+  margin: 24px auto 0;
+  max-width: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba($morado, 0.18);
+
+  img {
+    width: 100%;
+    display: block;
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+// ============ BLOQUES ============
+.info-block {
+  background: $blanco;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  border-left: 3px solid $dorado;
+  box-shadow: 0 6px 20px rgba($morado, 0.06);
+  text-align: left;
+}
+
+// ============ 3. PROGRAMACIÓN ============
+.slide-programa {
+  background: $marfil;
+  justify-content: flex-start;
+  padding-top: 50px;
+  overflow-y: auto;
+}
+
+.programa-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 22px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, $dorado 0%, $morado-suave 100%);
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -22px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background: $dorado;
+  border: 3px solid $marfil;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px $dorado;
+}
+
+.timeline-hora {
+  flex: 0 0 50px;
+  font-family: $font-display;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: $morado;
+  padding-top: 1px;
+}
+
+.timeline-body {
+  h4 {
+    font-family: $font-display;
+    font-size: 1rem;
+    color: $morado-profundo;
+    margin-bottom: 3px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 0.78rem;
+    color: $gris;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+}
+
+// ============ 4. RECONOCIMIENTO ============
+.slide-reconocimiento {
+  background: linear-gradient(180deg, $marfil 0%, #efe8f5 100%);
+  justify-content: flex-start;
+  padding-top: 50px;
+  overflow-y: auto;
+}
+
+.grupo-titulo {
+  display: block;
+  font-family: $font-display;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $morado-profundo;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid $dorado;
+  border-radius: 40px;
+  margin: 22px auto 14px;
+  background: $blanco;
+  max-width: 260px;
+
+  span {
+    color: $dorado;
+  }
+}
+
+.lista-trabajadores {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trabajador-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: rgba($blanco, 0.85);
+  border-radius: 10px;
+  border-left: 2px solid $dorado;
+  font-size: 0.8rem;
+  color: $morado-profundo;
+  line-height: 1.3;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: $dorado;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+}
+
+// ============ 5. SLIDER ============
+.slide-slider {
+  background: $morado-profundo;
+  color: $blanco;
+  justify-content: flex-start;
+  padding-top: 50px;
+  overflow-y: auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba($dorado, 0.15) 0%, transparent 70%);
+  }
+
+  .section-title {
+    color: $blanco;
+  }
+}
+
+.slider-grupo-titulo {
+  font-family: $font-display;
+  font-size: 1rem;
+  color: $dorado-claro;
+  margin: 18px 0 10px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.slider {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 6px 4px 16px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  @include hide-scrollbar;
+}
+
+.card-trabajador {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+  background: linear-gradient(180deg, rgba($blanco, 0.08) 0%, rgba($blanco, 0.02) 100%);
+  border: 1px solid rgba($dorado, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.card-foto {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, $morado-medio, $morado-suave);
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-info {
+  padding: 12px 14px 16px;
+  text-align: center;
+}
+
+.card-nombre {
+  font-family: $font-display;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $blanco;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.card-cargo {
+  font-size: 0.65rem;
+  color: rgba($blanco, 0.6);
+  margin-bottom: 8px;
+}
+
+.card-years {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: $morado-profundo;
+  background: $dorado-claro;
+  padding: 3px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+// ============ 6. DEPORTES ============
+.slide-deportes {
+  background: linear-gradient(180deg, #f0e8f5 0%, $marfil 100%);
+  justify-content: flex-start;
+  padding-top: 50px;
+  overflow-y: auto;
+}
+
+.deportes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.deporte-card {
+  background: $blanco;
+  padding: 14px 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba($morado, 0.08);
+  border-top: 3px solid $dorado;
+  text-align: left;
+
+  h4 {
+    font-family: $font-display;
+    font-size: 0.95rem;
+    color: $morado-profundo;
+    margin-bottom: 4px;
+    line-height: 1.15;
+  }
+
+  p {
+    font-size: 0.7rem;
+    color: $gris;
+    font-weight: 300;
+    line-height: 1.35;
+  }
+
+  .fecha {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: $dorado;
+    text-transform: uppercase;
+  }
+}
+
+.deporte-icon {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.foto-deportiva {
+  margin: 16px auto 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba($morado, 0.18);
+  max-width: 300px;
+
+  img {
+    width: 100%;
+    display: block;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
+// ============ 7. QR ============
+.slide-registro {
+  background: linear-gradient(180deg, $marfil 0%, $morado 45%, $morado-profundo 100%);
+  color: $blanco;
+  text-align: center;
+
+  .section-title {
+    color: $blanco;
+  }
+
+  p {
+    color: rgba($blanco, 0.85);
+    font-size: 0.88rem;
+    margin-bottom: 26px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.qr-container {
+  display: inline-block;
+  background: $blanco;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px dashed rgba($dorado, 0.5);
+    border-radius: 22px;
+  }
+
+  img {
+    width: 180px;
+    height: 180px;
+    display: block;
+  }
+}
+
+.qr-texto {
+  margin-top: 20px;
+  font-size: 0.72rem;
+  color: $dorado-claro;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+// ============ 8. CIERRE ============
+.slide-cierre {
+  background: $morado-profundo;
+  color: $blanco;
+  text-align: center;
+  justify-content: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba($dorado, 0.15) 0%, transparent 70%);
+  }
+
+  .section-title {
+    color: $blanco;
+    font-size: 1.7rem;
+  }
+
+  p {
+    color: rgba($blanco, 0.82);
+    font-size: 0.88rem;
+    max-width: 420px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+}
+
+.cierre-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cierre-foto {
+  max-width: 280px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba($dorado, 0.4);
+
+  img {
+    width: 100%;
+    display: block;
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+.cierre-divider {
+  width: 70px;
+  height: 1px;
+  background: $dorado;
+  margin: 22px auto;
+  position: relative;
+
+  &::before {
+    content: '◆';
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $dorado;
+    background: $morado-profundo;
+    padding: 0 8px;
+    font-size: 0.65rem;
+  }
+}
+
+// ============ 9. FOOTER ============
+.slide-footer {
+  background: #1a0f2b;
+  color: rgba($blanco, 0.7);
+  text-align: center;
+  justify-content: center;
+  padding: 50px 24px 40px;
+  border-top: 1px solid rgba($dorado, 0.2);
+}
+
+.footer-logo {
+  font-family: $font-display;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $dorado-claro;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.footer-info {
+  font-size: 0.75rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  font-weight: 300;
+}
+
+.footer-fotos {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+
+  div {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, $morado-medio, $morado-suave);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.footer-mensaje {
+  font-family: $font-display;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: $dorado-claro;
+  margin-bottom: 16px;
+}
+
+.footer-copy {
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  color: rgba($blanco, 0.35);
+  text-transform: uppercase;
+}
+
+// ============================================================
+//  RESPONSIVE: TABLET & DESKTOP
+//  (van al final a propósito: deben ganar en orden de cascada
+//   a los estilos base de cada slide, igual que en el CSS original)
+// ============================================================
+
+// Tablet: >= 720px
+@include tablet {
+  .slide {
+    padding: 70px 40px 80px;
+  }
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  // Hero: 2 columnas (texto izquierda, imagen derecha)
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    text-align: left;
+  }
+  .hero-center {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero-photo {
+    max-width: 100%;
+    border-radius: 240px 240px 20px 20px;
+
+    img {
+      height: 400px;
+    }
+  }
+
+  // Invitación: 2 columnas
+  .invitacion-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    text-align: left;
+  }
+  .invitacion-texto-wrap {
+    text-align: left;
+
+    .section-eyebrow,
+    .section-title {
+      text-align: left;
+    }
+  }
+  .slide-invitacion p {
+    font-size: 1rem;
+  }
+  .foto-secundaria {
+    margin: 0;
+    max-width: 100%;
+
+    img {
+      height: 380px;
+    }
+  }
+
+  // Programa: 2 columnas de timeline
+  .programa-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+
+  // Listas reconocimiento: 2 columnas
+  .lista-trabajadores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .trabajador-item {
+    font-size: 0.85rem;
+  }
+
+  // Slider: tarjetas más grandes
+  .card-trabajador {
+    flex: 0 0 240px;
+  }
+  .card-foto {
+    height: 200px;
+  }
+
+  // Deportes: 4 columnas
+  .deportes-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .foto-deportiva {
+    max-width: 100%;
+    margin-top: 24px;
+
+    img {
+      height: 260px;
+    }
+  }
+
+  // QR más grande
+  .qr-container img {
+    width: 220px;
+    height: 220px;
+  }
+  .slide-registro p {
+    max-width: 500px;
+    font-size: 1rem;
+  }
+
+  // Cierre: 2 columnas
+  .cierre-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+  }
+  .cierre-foto {
+    max-width: 100%;
+    margin: 0;
+
+    img {
+      height: 360px;
+    }
+  }
+  .slide-cierre {
+    .section-title {
+      text-align: left;
+      font-size: 2.2rem;
+    }
+    p {
+      margin: 0;
+      text-align: left;
+      font-size: 1rem;
+    }
+    .section-eyebrow {
+      text-align: left;
+    }
+  }
+  .cierre-divider {
+    margin: 22px 0;
+  }
+
+  // Footer
+  .footer-fotos div {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+// Desktop grande: >= 1024px
+@include desktop {
+  .slide {
+    padding: 80px 60px 90px;
+  }
+  .section-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-title {
+    font-size: 3.8rem;
+    line-height: 1.05;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .hero-photo img {
+    height: 480px;
+  }
+
+  .invitacion-grid {
+    gap: 70px;
+  }
+  .foto-secundaria img {
+    height: 440px;
+  }
+  .slide-invitacion p {
+    font-size: 1.05rem;
+  }
+
+  .card-trabajador {
+    flex: 0 0 280px;
+  }
+  .card-foto {
+    height: 240px;
+  }
+
+  .timeline-hora {
+    font-size: 1.2rem;
+    flex: 0 0 60px;
+  }
+  .timeline-body {
+    h4 {
+      font-size: 1.15rem;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+  }
+
+  .deporte-card {
+    padding: 20px 18px;
+
+    h4 {
+      font-size: 1.1rem;
+    }
+    p {
+      font-size: 0.78rem;
+    }
+  }
+  .deporte-icon {
+    font-size: 1.6rem;
+  }
+
+  .qr-container img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .cierre-foto img {
+    height: 420px;
+  }
+  .slide-cierre .section-title {
+    font-size: 2.6rem;
+  }
+
+  // Nav dots más visibles en desktop
+  .nav-dots {
+    right: 24px;
+    gap: 10px;
+
+    a {
+      width: 8px;
+      height: 8px;
+
+      &.active {
+        height: 24px;
+      }
+    }
+  }
+}
+
+// Pantallas muy bajas (laptops pequeñas)
+@include short-screen {
+  .slide {
+    padding: 40px 40px 50px;
+  }
+  .hero-title {
+    font-size: 2.6rem;
+  }
+  .hero-photo img {
+    height: 320px;
+  }
+  .foto-secundaria img {
+    height: 300px;
+  }
+  .cierre-foto img {
+    height: 280px;
+  }
+  .section-title {
+    font-size: 1.9rem;
+  }
 }
