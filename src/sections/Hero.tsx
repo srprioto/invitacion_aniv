@@ -2,13 +2,15 @@ import ScrollHint from "@/components/ScrollHint";
 
 export default function Hero() {
 
-	const DEFAULT_PHOTO = '/photo.jpg'; // coloca photo.jpg en /public
+	const DEFAULT_PHOTO = '/images/SrMilagros.jpg';
+	const logoImg = '/images/logoGeresa.png';
 
 	return (
 		<section className="slide slide-hero" id="s1">
 			<div className="texture-dots" />
 
 			<div className="hero-top">
+				<img src={logoImg} alt="" />
 				<div className="logo-geresa">GERESA Cusco</div>
 				<div className="hero-year">2026</div>
 			</div>

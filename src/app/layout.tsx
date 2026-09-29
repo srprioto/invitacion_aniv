@@ -17,7 +17,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  	title: 'Invitación LXIX Aniversario GERESA',
+	title: 'Invitación LXIX Aniversario GERESA',
 };
 
 export const viewport: Viewport = {
@@ -29,24 +29,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="es" className={`${montserrat.variable} ${cormorant.variable}`}>
-			<body>{children}</body>
+		<html
+			lang="es"
+			className={`${montserrat.variable} ${cormorant.variable}`}
+			suppressHydrationWarning
+		>
+			<body suppressHydrationWarning>{children}</body>
 		</html>
 	);
 }
-
-
-// src/
-// ├── app/              # rutas (Next)
-// ├── components/       # UI reutilizable
-// ├── sections/         # bloques de la página (Hero, RSVP...)
-// ├── hooks/            # custom hooks
-// ├── lib/              # utilidades
-// ├── types/            # tipos TS
-// ├── styles/           # scss global (variables, mixins)
-// └── assets/           # imágenes, fuentes locales
-
-
-// requerido:
-// GSAP + Spline
-// Framer Motion

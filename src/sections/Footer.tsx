@@ -1,7 +1,6 @@
 export default function Footer() {
 
-	const FOOTER_MENSAJE = '"Unidos por la salud y el bienestar de nuestro pueblo"';
-	const DEFAULT_PHOTO = '/photo.jpg';
+	// const DEFAULT_PHOTO = '/images/SrMilagros.jpg';
 
 	return (
 		<section className="slide slide-footer" id="s9">
@@ -9,22 +8,18 @@ export default function Footer() {
 				<div className="footer-logo">GERESA</div>
 
 				<div className="footer-info">
-					Gerencia Regional de Salud Cusco
-					<br />
-					Dirección Ejecutiva de Inteligencia Sanitaria
-					<br />
-					Cusco, Octubre de 2026
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text
 				</div>
 
-				<div className="footer-fotos">
+				{/* <div className="footer-fotos">
 					{[0, 1, 2].map((i) => (
 						<div key={i}>
 							<img src={DEFAULT_PHOTO} alt="" />
 						</div>
 					))}
-				</div>
+				</div> */}
 
-				<div className="footer-mensaje">{FOOTER_MENSAJE}</div>
+				<div className="footer-mensaje">"Unidos por la salud y el bienestar de nuestro pueblo"</div>
 
 				<div className="footer-copy">© 2026 GERESA Cusco</div>
 			</div>

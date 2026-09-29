@@ -2,7 +2,8 @@ import ScrollHint from "@/components/ScrollHint";
 
 export default function Invitacion() {
 
-	const DEFAULT_PHOTO = '/photo.jpg';
+	const nombre_invitado = "Dr. Fernando Alejandro Quispe Morales";
+	const DEFAULT_PHOTO = '/images/SrMilagros.jpg';
 
 	return (
 		<section className="slide slide-invitacion" id="s2">
@@ -11,6 +12,11 @@ export default function Invitacion() {
 					<div className="invitacion-texto-wrap">
 						<div className="section-eyebrow">Con motivo de celebrar</div>
 						<h2 className="section-title">Una fecha de fe, tradición y reconocimiento</h2>
+
+						<div className="nombre-inv">
+							<span>Estimado(A)</span>
+							<p>{ nombre_invitado }</p>
+						</div>
 
 						<p>
 							El <span className="destacado">Gerente Regional de Salud Cusco</span> y la{' '}
