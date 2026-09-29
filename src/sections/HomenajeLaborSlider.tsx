@@ -5,7 +5,7 @@ import ScrollHint from '@/components/ScrollHint';
 
 interface Homenajeado {
 	nombre: string;
-	cargo: string;
+	// cargo: string;
 	foto?: string;
 }
 
@@ -20,28 +20,34 @@ const HOMENAJEADOS: HomenajeadoGroup[] = [
 		personas: [
 			{ 
 				nombre: 'Dario F. Navarro Mendoza', 
-				cargo: 'Médico Cirujano', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Médico Cirujano', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 			{ 
 				nombre: 'Mauro Vargas León', 
-				cargo: 'Médico Cirujano', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Médico Cirujano', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 			{ 
 				nombre: 'Manuel G. Vigil Vargas', 
-				cargo: 'Economista', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Economista', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 			{ 
 				nombre: 'Miriam Manya Aqgehua', 
-				cargo: 'Químico Farmacéutico', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Químico Farmacéutico', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 			{ 
 				nombre: 'Wilbert Otano Rojas', 
-				cargo: 'Técnico Administrativo', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Técnico Administrativo', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 			{ 
 				nombre: 'Carlos E. Vega Centeno Cruzado', 
-				cargo: 'Médico Cirujano', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Médico Cirujano', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 		],
 	},
 	{
@@ -49,12 +55,14 @@ const HOMENAJEADOS: HomenajeadoGroup[] = [
 		personas: [
 			{ 
 				nombre: 'Gloria D. Ochoa Guillén', 
-				cargo: 'Licenciada en Enfermería', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Licenciada en Enfermería', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 			{ 
 				nombre: 'Jackeline P. Velarde Flores', 
-				cargo: 'Obstetra', 
-				foto: '/images/SrMilagros.jpg' },
+				// cargo: 'Obstetra', 
+				foto: '/images/SrMilagros.jpg' 
+			},
 		],
 	},
 ];
@@ -185,14 +193,13 @@ export default function HomenajeLaborSlider() {
 							className="slider"
 							ref={(el) => { sliderRefs.current[groupIdx] = el; }}
 						>
-							{personas.map(({ nombre, cargo, foto }) => (
+							{personas.map(({ nombre, foto }) => (
 								<div className="card-trabajador" key={nombre}>
 									<div className="card-foto">
 										<img src={foto} alt="" />
 									</div>
 									<div className="card-info">
 										<div className="card-nombre">{nombre}</div>
-										<div className="card-cargo">{cargo}</div>
 										<div className="card-years">{anios} Años</div>
 									</div>
 								</div>
