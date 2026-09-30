@@ -1,11 +1,15 @@
-export default function BtnQr() {
+interface prop {
+	onClic:Function
+}
+
+export default function BtnGoQr({ onClic }:prop) {
 	return (
 		<div className="goQR">
 			<button 
 				className="goQR__btn" 
 				type="button" 
 				aria-label="Escanear código QR"
-				onClick={() => {  }}
+				onClick={() => { onClic() }}
 			>
 				<svg
 					className="goQR__icon"
