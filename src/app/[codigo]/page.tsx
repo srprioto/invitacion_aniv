@@ -2,6 +2,8 @@
 import invitados from "@/data/Invitados";
 import InvitacionClient from "./InvitacionClient";
 import Rrror from "@/components/Rrror";
+import Preloader from "@/components/Preloader";
+import { ALL_FONTS, ALL_IMAGES, ALL_VIDEOS } from "@/data/assets";
 
 export async function generateStaticParams() {
 	return invitados.map((invitado) => ({
@@ -21,5 +23,15 @@ export default async function Page({ params }: Props) {
 		return <Rrror />;
 	}
 
-	return <InvitacionClient invitado={invitado} />;
+	return <Preloader
+	    images={ALL_IMAGES}
+		videos={ALL_VIDEOS}
+		fonts={ALL_FONTS}
+		cacheKey="invitacion-cargada"
+	>
+		<InvitacionClient invitado={invitado} />
+	</Preloader>
+	
+	
+	
 }
