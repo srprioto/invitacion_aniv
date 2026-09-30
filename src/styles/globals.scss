@@ -193,7 +193,7 @@ body {
 	font-weight: 600;
 	color: $morado-profundo;
 	line-height: 1.15;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	text-align: center;
 
 	&--tight {
@@ -707,11 +707,6 @@ body {
 
 
 
-
-
-
-
-
 // ============ 3. PROGRAMACIÓN ============
 .slide-programa {
 	background: $marfil;
@@ -744,7 +739,7 @@ body {
 
 .timeline-item {
 	position: relative;
-	padding-bottom: 18px;
+	padding-bottom: 30px;
 	display: flex;
 	gap: 12px;
 	align-items: flex-start;
@@ -765,7 +760,7 @@ body {
 .timeline-hora {
 	flex: 0 0 50px;
 	font-family: $font-display;
-	font-size: 1.05rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 	color: $morado;
 	padding-top: 1px;
@@ -774,14 +769,14 @@ body {
 .timeline-body {
 	h4 {
 		font-family: $font-display;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		color: $morado-profundo;
 		margin-bottom: 3px;
 		line-height: 1.2;
 	}
 
 	p {
-		font-size: 0.78rem;
+		font-size: 0.9rem;
 		color: $gris;
 		font-weight: 300;
 		line-height: 1.4;
@@ -1650,6 +1645,25 @@ body {
 		background: $morado-profundo;
 		padding: 0 8px;
 		font-size: 0.65rem;
+	}
+}
+.cierre-divider-claro {
+	width: 70px;
+	height: 1px;
+	background: $morado-medio;
+	margin: 22px auto;
+	position: relative;
+
+	&::before {
+		content: '◆';
+		position: absolute;
+		top: -9px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: $morado-medio;
+		background: #f5f1f2;
+		padding: 0 8px;
+		font-size: 1rem;
 	}
 }
 

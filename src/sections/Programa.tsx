@@ -10,13 +10,26 @@ export default function Programa() {
 
 	const TIMELINE_COLUMNS: TimelineEvent[][] = [
 		[
-			{ hora: '08:00', titulo: 'Cántico de Aniversario', detalle: 'Inicio de actividades conmemorativas' },
-			{ hora: '08:30', titulo: 'Ceremonia Cívico Patriótica', detalle: 'Acto protocolar de izamiento' },
-			{ hora: '09:00', titulo: 'Ceremonia Litúrgica', detalle: 'Rvdo. Mons. Manuel Bravo Álvarez' },
-		],
-		[
-			{ hora: '10:00', titulo: 'Procesión de la Sagrada Imagen', detalle: 'Señor de los Milagros' },
-			{ hora: '11:00', titulo: 'Compartir Institucional', detalle: 'Ceremonia protocolar y reconocimientos' },
+			{ 
+				hora: '08:00', 
+				titulo: 'Cántico de Aniversario', 
+				detalle: 'Inicio de actividades conmemorativas' },
+			{ 
+				hora: '08:30', 
+				titulo: 'Ceremonia Cívico Patriótica', 
+				detalle: 'Acto protocolar de izamiento' },
+			{ 
+				hora: '09:00', 
+				titulo: 'Ceremonia Litúrgica', 
+				detalle: 'Rvdo. Mons. Manuel Bravo Álvarez' },
+			{ 
+				hora: '10:00', 
+				titulo: 'Procesión de la Sagrada Imagen', 
+				detalle: 'Señor de los Milagros' },
+			{ 
+				hora: '11:00', 
+				titulo: 'Compartir Institucional', 
+				detalle: 'Ceremonia protocolar y reconocimientos' },
 			{
 				hora: '13:30',
 				titulo: 'Almuerzo de Confraternidad',

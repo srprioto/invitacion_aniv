@@ -124,7 +124,7 @@ export default function HomenajeLabor() {
 					<span>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eius molestiae doloribus quae debitis qui fugiat mollitia quos nostrum, facere in distinctio odio exercitationem officiis non reiciendis rerum aspernatur? Doloremque?
 					</span>
-					<div className='linea_inf' />
+					<div className="cierre-divider-claro" />
 				</div>
 
 				<div className="slider" ref={sliderRef}>
