@@ -3,7 +3,7 @@ import ScrollHint from "@/components/ScrollHint";
 export default function Invitacion() {
 
 	const nombre_invitado = "Dr. Fernando Alejandro Quispe Morales";
-	const DEFAULT_PHOTO = '/images/SrMilagros.jpg';
+	const DEFAULT_PHOTO = '/images/SrMilagros2.png';
 
 	return (
 		<section className="slide slide-invitacion" id="s2">

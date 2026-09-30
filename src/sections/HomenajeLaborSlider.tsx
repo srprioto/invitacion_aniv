@@ -5,7 +5,6 @@ import ScrollHint from '@/components/ScrollHint';
 
 interface Homenajeado {
 	nombre: string;
-	// cargo: string;
 	foto?: string;
 }
 
@@ -18,121 +17,26 @@ const HOMENAJEADOS: HomenajeadoGroup[] = [
 	{
 		anios: 25,
 		personas: [
-			{ 
-				nombre: 'Dario F. Navarro Mendoza', 
-				// cargo: 'Médico Cirujano', 
-				foto: '/images/SrMilagros.jpg' 
-			},
-			{ 
-				nombre: 'Mauro Vargas León', 
-				// cargo: 'Médico Cirujano', 
-				foto: '/images/SrMilagros.jpg' 
-			},
-			{ 
-				nombre: 'Manuel G. Vigil Vargas', 
-				// cargo: 'Economista', 
-				foto: '/images/SrMilagros.jpg' 
-			},
-			{ 
-				nombre: 'Miriam Manya Aqgehua', 
-				// cargo: 'Químico Farmacéutico', 
-				foto: '/images/SrMilagros.jpg' 
-			},
-			{ 
-				nombre: 'Wilbert Otano Rojas', 
-				// cargo: 'Técnico Administrativo', 
-				foto: '/images/SrMilagros.jpg' 
-			},
-			{ 
-				nombre: 'Carlos E. Vega Centeno Cruzado', 
-				// cargo: 'Médico Cirujano', 
-				foto: '/images/SrMilagros.jpg' 
-			},
+			{ nombre: 'Dario F. Navarro Mendoza', foto: '/images/personas/25/dario_navarro.jpeg' },
+			{ nombre: 'Mauro Vargas León', foto: '/images/personas/25/mauro_vargas.jpeg' },
+			{ nombre: 'Manuel G. Vigil Vargas', foto: '/images/personas/25/manuel_vigil.jpeg' },
+			{ nombre: 'Miriam Manya Aqgehua', foto: '/images/personas/25/miriem_manya.jpeg' },
+			{ nombre: 'Wilbert Otano Rojas', foto: '/images/personas/25/wilber_otano.jpg' },
+			{ nombre: 'Carlos E. Vega Centeno Cruzado', foto: '/images/personas/25/carlos_vega_centeno.png' },
 		],
 	},
 	{
 		anios: 30,
 		personas: [
-			{ 
-				nombre: 'Gloria D. Ochoa Guillén', 
-				// cargo: 'Licenciada en Enfermería', 
-				foto: '/images/SrMilagros.jpg' 
-			},
-			{ 
-				nombre: 'Jackeline P. Velarde Flores', 
-				// cargo: 'Obstetra', 
-				foto: '/images/SrMilagros.jpg' 
-			},
+			{ nombre: 'Gloria D. Ochoa Guillén', foto: '/images/personas/30/gloria_ochoa.jpeg' },
+			{ nombre: 'Jackeline P. Velarde Flores', foto: '/images/personas/30/jackeline_velarde.jpeg' },
 		],
 	},
 ];
 
-
-function useAutoScroll(
-	ref: React.RefObject<HTMLDivElement | null>,
-	options: { interval?: number; resumeDelay?: number } = {}
-) {
-	const { interval = 1000, resumeDelay = 2000 } = options;
-
-	useEffect(() => {
-		const el = ref.current;
-		if (!el) return;
-
-		let paused = false;
-		let resumeTimer: ReturnType<typeof setTimeout> | null = null;
-
-		const pause = () => {
-			paused = true;
-			if (resumeTimer) clearTimeout(resumeTimer);
-			resumeTimer = setTimeout(() => {
-				paused = false;
-			}, resumeDelay);
-		};
-
-		// Pausar cuando el usuario interactúa
-		el.addEventListener('touchstart', pause, { passive: true });
-		el.addEventListener('wheel', pause, { passive: true });
-		el.addEventListener('mousedown', pause);
-		el.addEventListener('scroll', () => {
-			// Ignoramos scrolls muy pequeños (los que hacemos nosotros)
-			if (Math.abs(el.scrollLeft - lastScrollLeft) > 40) pause();
-		}, { passive: true });
-
-		let lastScrollLeft = el.scrollLeft;
-
-		const timer = setInterval(() => {
-			if (paused) return;
-
-			const card = el.querySelector<HTMLElement>('.card-trabajador');
-			if (!card) return;
-
-			// Ancho de una card + gap
-			const cardWidth = card.offsetWidth + 14; // 14 = gap del CSS
-			const maxScroll = el.scrollWidth - el.clientWidth;
-
-			let next = el.scrollLeft + cardWidth;
-
-			// Si ya no cabe otra card, volvemos al inicio
-			if (next >= maxScroll - 4) {
-				next = 0;
-			}
-
-			el.scrollTo({ left: next, behavior: 'smooth' });
-			lastScrollLeft = next;
-		}, interval);
-
-		return () => {
-			clearInterval(timer);
-			if (resumeTimer) clearTimeout(resumeTimer);
-		};
-	}, [ref, interval, resumeDelay]);
-}
-
 export default function HomenajeLaborSlider() {
-	// Un ref por grupo (por años) para que cada slider gire independiente
 	const sliderRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-	// Hook para cada slider
 	useEffect(() => {
 		const cleanups: Array<() => void> = [];
 
@@ -158,15 +62,22 @@ export default function HomenajeLaborSlider() {
 
 			const timer = setInterval(() => {
 				if (paused) return;
+
 				const card = el.querySelector<HTMLElement>('.card-trabajador');
 				if (!card) return;
 
 				const cardWidth = card.offsetWidth + 14;
 				const maxScroll = el.scrollWidth - el.clientWidth;
-				let next = el.scrollLeft + cardWidth;
 
-				if (next >= maxScroll - 4) next = 0;
+				// Si ya estamos al final → volver al inicio
+				if (el.scrollLeft >= maxScroll - 4) {
+					el.scrollTo({ left: 0, behavior: 'smooth' });
+					lastScrollLeft = 0;
+					return;
+				}
 
+				// Avanzar una card sin pasarnos del final
+				const next = Math.min(el.scrollLeft + cardWidth, maxScroll);
 				el.scrollTo({ left: next, behavior: 'smooth' });
 				lastScrollLeft = next;
 			}, 2000);

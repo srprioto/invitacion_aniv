@@ -1,14 +1,21 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ScrollHint from "@/components/ScrollHint";
 
-const DEFAULT_PHOTO = '/images/SrMilagros.jpg';
-
 const copaGeresa = [
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
+	'/images/campeonato/1.jpg',
+	'/images/campeonato/2.jpg',
+	'/images/campeonato/3.jpg',
+	'/images/campeonato/4.jpg',
+	'/images/campeonato/5.jpg',
+	'/images/campeonato/6.jpg',
+	'/images/campeonato/7.jpg',
+	'/images/campeonato/8.jpg',
+	'/images/campeonato/9.jpg',
+	'/images/campeonato/10.jpg',
+	'/images/campeonato/11.jpg',
+	'/images/campeonato/12.jpg',
 ];
 
 const srMilagros = [
@@ -18,16 +25,14 @@ const srMilagros = [
 ];
 
 const concurDanzas = [
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
+	'/images/danza/1.jpeg',
+	'/images/danza/2.jpeg',
+	'/images/danza/3.jpeg',
+	'/images/danza/4.jpeg',
 ];
 
 const izamBandera = [
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
+	'/images/izam/izam.jpeg',
 ];
 
 type ModalKey = 'copa' | 'milagros' | 'danzas' | 'bandera' | null;
@@ -66,41 +71,59 @@ const MODALES: Record<string, ModalData> = {
 	},
 };
 
+const AUTOPLAY_INTERVAL = 3000;
+const RESUME_DELAY = 3000;
+
 export default function Deportes() {
 	const [modalAbierto, setModalAbierto] = useState<ModalKey>(null);
 	const [imgActual, setImgActual] = useState(0);
+	const [paused, setPaused] = useState(false);
+
+	const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+	const data = modalAbierto ? MODALES[modalAbierto] : null;
 
 	const abrirModal = (key: ModalKey) => {
 		setModalAbierto(key);
 		setImgActual(0);
+		setPaused(false);
 	};
 
 	const cerrarModal = () => {
 		setModalAbierto(null);
 		setImgActual(0);
+		setPaused(false);
+		if (resumeTimer.current) {
+			clearTimeout(resumeTimer.current);
+			resumeTimer.current = null;
+		}
 	};
 
-	const data = modalAbierto ? MODALES[modalAbierto] : null;
-
-	// Navegación del carrusel
-	const siguiente = () => {
-		if (!data) return;
-		setImgActual((i) => (i + 1) % data.imagenes.length);
+	// Pausa temporal con auto-reanudación
+	const pausarTemporal = () => {
+		setPaused(true);
+		if (resumeTimer.current) clearTimeout(resumeTimer.current);
+		resumeTimer.current = setTimeout(() => setPaused(false), RESUME_DELAY);
 	};
 
-	const anterior = () => {
-		if (!data) return;
-		setImgActual((i) => (i - 1 + data.imagenes.length) % data.imagenes.length);
-	};
+	// ============ AUTOPLAY ============
+	useEffect(() => {
+		if (!modalAbierto || !data) return;
+		if (paused) return;
 
-	// Cerrar con Escape + bloquear scroll de fondo
+		const timer = setInterval(() => {
+			setImgActual((i) => (i + 1) % data.imagenes.length);
+		}, AUTOPLAY_INTERVAL);
+
+		return () => clearInterval(timer);
+	}, [modalAbierto, data, paused]);
+
+	// ============ ESC + bloquear scroll de fondo ============
 	useEffect(() => {
 		if (!modalAbierto) return;
 
 		const onKey = (e: KeyboardEvent) => {
 			if (e.key === 'Escape') cerrarModal();
-			if (e.key === 'ArrowRight') siguiente();
-			if (e.key === 'ArrowLeft') anterior();
 		};
 
 		document.addEventListener('keydown', onKey);
@@ -110,7 +133,32 @@ export default function Deportes() {
 			document.removeEventListener('keydown', onKey);
 			document.body.style.overflow = '';
 		};
-	}, [modalAbierto, data]);
+	}, [modalAbierto]);
+
+	// ============ SWIPE TÁCTIL ============
+	const touchStartX = useRef<number | null>(null);
+
+	const onTouchStart = (e: React.TouchEvent) => {
+		touchStartX.current = e.touches[0].clientX;
+	};
+
+	const onTouchEnd = (e: React.TouchEvent) => {
+		if (touchStartX.current === null || !data) return;
+
+		const delta = e.changedTouches[0].clientX - touchStartX.current;
+		const threshold = 40;
+
+		if (Math.abs(delta) > threshold) {
+			if (delta < 0) {
+				setImgActual((i) => (i + 1) % data.imagenes.length);
+			} else {
+				setImgActual((i) => (i - 1 + data.imagenes.length) % data.imagenes.length);
+			}
+			pausarTemporal();
+		}
+
+		touchStartX.current = null;
+	};
 
 	return (
 		<section className="slide slide-deportes" id="s6">
@@ -161,15 +209,6 @@ export default function Deportes() {
 					</article>
 
 				</div>
-
-				<div className="foto-deportiva">
-					<img src={DEFAULT_PHOTO} alt="Equipo deportivo GERESA" />
-					<div className="foto-deportiva__overlay" aria-hidden="true" />
-					<div className="foto-deportiva__caption">
-						<span className="foto-deportiva__eyebrow">Confraternidad</span>
-						<span className="foto-deportiva__title">Copa GERESA 2026</span>
-					</div>
-				</div>
 			</div>
 
 			{/* ============ MODAL ============ */}
@@ -199,35 +238,23 @@ export default function Deportes() {
 							</div>
 						</div>
 
-						<div className="modal-carousel">
-							<button
-								type="button"
-								className="modal-nav modal-nav--prev"
-								onClick={anterior}
-								aria-label="Imagen anterior"
-							>
-								‹
-							</button>
-
+						<div
+							className="modal-carousel"
+							onMouseEnter={pausarTemporal}
+							onTouchStart={onTouchStart}
+							onTouchEnd={onTouchEnd}
+						>
 							<div className="modal-image-wrap">
 								<img
+									key={data.imagenes[imgActual]}
 									src={data.imagenes[imgActual]}
 									alt={`${data.titulo} - imagen ${imgActual + 1}`}
 									className="modal-image"
 								/>
-							</div>
 
-							<button
-								type="button"
-								className="modal-nav modal-nav--next"
-								onClick={siguiente}
-								aria-label="Imagen siguiente"
-							>
-								›
-							</button>
-
-							<div className="modal-counter">
-								{imgActual + 1} / {data.imagenes.length}
+								<div className="modal-counter">
+									{imgActual + 1} / {data.imagenes.length}
+								</div>
 							</div>
 						</div>
 
@@ -237,7 +264,10 @@ export default function Deportes() {
 									key={i}
 									type="button"
 									className={`modal-dot ${i === imgActual ? 'is-active' : ''}`}
-									onClick={() => setImgActual(i)}
+									onClick={() => {
+										setImgActual(i);
+										pausarTemporal();
+									}}
 									aria-label={`Ir a imagen ${i + 1}`}
 								/>
 							))}
