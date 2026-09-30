@@ -1,6 +1,7 @@
 // src/app/[codigo]/page.tsx
 import invitados from "@/data/Invitados";
 import InvitacionClient from "./InvitacionClient";
+import Rrror from "@/components/Rrror";
 
 export async function generateStaticParams() {
 	return invitados.map((invitado) => ({
@@ -17,7 +18,7 @@ export default async function Page({ params }: Props) {
 	const invitado = invitados.find((i) => i.codigo === codigo);
 
 	if (!invitado) {
-		return <div>Código de invitado inválido</div>;
+		return <Rrror />;
 	}
 
 	return <InvitacionClient invitado={invitado} />;
