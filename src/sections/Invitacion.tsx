@@ -1,8 +1,11 @@
 import ScrollHint from "@/components/ScrollHint";
 
-export default function Invitacion() {
+interface prop {
+	nombreInv: string
+}
 
-	const nombre_invitado = "Dr. Fernando Alejandro Quispe Morales";
+export default function Invitacion({ nombreInv }:prop) {
+
 	const DEFAULT_PHOTO = '/images/SrMilagros2.png';
 
 	return (
@@ -15,7 +18,7 @@ export default function Invitacion() {
 
 						<div className="nombre-inv">
 							<span>Estimado(A)</span>
-							<p>{ nombre_invitado }</p>
+							<p>{ nombreInv }</p>
 						</div>
 
 						<p>

@@ -1,4 +1,14 @@
-const invitados: any = [
+export type Invitado = {
+	nombre: string;
+	codigo: string;
+};
+
+const invitados: Invitado[] = [
+
+	{
+		nombre: "Renato Renzo Luna Herrera",
+		codigo: "000000"
+	},
 	{
 		nombre: "Juan Carlos Rodríguez Gómez",
 		codigo: "f82h4d"

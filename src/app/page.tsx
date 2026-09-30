@@ -1,66 +1,27 @@
-'use client';
-
-import Hero from '@/sections/Hero';
-import HomenajeLabor from '@/sections/HomenajeLabor';
-import Invitacion from '@/sections/Invitacion';
-import Programa from '@/sections/Programa';
-import Reconocimiento from '@/sections/Reconocimiento';
-import HomenajeLaborSlider from '@/sections/HomenajeLaborSlider';
-
-import { useRef } from 'react';
-import Deportes from '@/sections/Deportes';
-import RegistroQr from '@/sections/RegistroQr';
-import Cierre from '@/sections/Cierre';
-import Footer from '@/sections/Footer';
-import NavRight from '@/components/NavRight';
-import VideoInv from '@/sections/VideoInv';
-
-
-interface NavSection {
-	id: string;
-	label: string;
-}
-
 export default function Home() {
 
-		
-	const containerRef = useRef<HTMLElement>(null);
-
-	const NAV_SECTIONS: NavSection[] = [
-		{ id: 's1', label: 'Portada' },
-		{ id: 's2', label: 'Invitación' },
-		{ id: 's2b', label: 'VideoInv' },
-		{ id: 's3', label: 'Programación' },
-		// { id: 's4', label: 'Reconocimiento' },
-		{ id: 's4b', label: 'Homenaje institucional' },
-		{ id: 's5', label: 'Galería' },
-		{ id: 's6', label: 'Deportes' },
-		{ id: 's7', label: 'Registro' },
-		{ id: 's8', label: 'Cierre' },
-		{ id: 's9', label: 'Footer' },
-	];
-
+	const logoImg = '/images/logoGeresa.png';
 
 	return (
-		<>
-			
-			<NavRight containerRef={containerRef} navSection={NAV_SECTIONS} />
+		<div className="codigo-invalido">
+			<div className="codigo-invalido__card">
+				<div className="codigo-invalido__logo">
+					<img src={logoImg} />
+				</div>
 
-			<main className="snap-container" id="snap" ref={containerRef}>
+				<h1 className="codigo-invalido__titulo">
+					Verifica tu entrada
+				</h1>
 
-				<Hero/>
-				<Invitacion />
-				<VideoInv />
-				<Programa />
-				{/* <Reconocimiento /> */}
-				<HomenajeLaborSlider />
-				<HomenajeLabor />
-				<Deportes />
-				<RegistroQr />
-				<Cierre />
-				<Footer />
+				<p className="codigo-invalido__texto">
+					Por favor, comunícate con la Dirección Ejecutiva de
+					Inteligencia Sanitaria (DEIS) para confirmar tu entrada.
+				</p>
 
-			</main>
-		</>
+				<p className="codigo-invalido__footer">
+					Geresa Cusco · 2026
+				</p>
+			</div>
+		</div>
 	);
 }

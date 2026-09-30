@@ -122,10 +122,27 @@ export default function HomenajeLabor() {
 
 				<div className='descrip_homenaje'>
 					<span>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eius molestiae doloribus quae debitis qui fugiat mollitia quos nostrum, facere in distinctio odio exercitationem officiis non reiciendis rerum aspernatur? Doloremque?
+						No todos tenemos la dicha de tener un(a) excelente compañero(a) de trabajo como tú y por eso te mereces un excelente reconocimiento por tu labor institucional
 					</span>
 					<div className="cierre-divider-claro" />
 				</div>
+
+				{/* <div className="cuadro">
+					<div className="cuadro__marco">
+						<div className="cuadro__pergamino">
+
+							<div className="cuadro__adorno cuadro__adorno--tl"></div>
+							<div className="cuadro__adorno cuadro__adorno--tr"></div>
+							<div className="cuadro__adorno cuadro__adorno--bl"></div>
+							<div className="cuadro__adorno cuadro__adorno--br"></div>
+
+							<p className="cuadro__texto">
+								"No todos tenemos la dicha de tener un(a) excelente compañero(a) de trabajo como tú y por eso te mereces un excelente reconocimiento por tu labor institucional"
+							</p>
+
+						</div>
+					</div>
+				</div> */}
 
 				<div className="slider" ref={sliderRef}>
 					{HOMENAJEADOS.map(({ nombre, foto, cargo }) => (

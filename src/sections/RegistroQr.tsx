@@ -1,6 +1,12 @@
 import ScrollHint from "@/components/ScrollHint";
 
-export default function RegistroQr() {
+interface prop {
+	codigo: string
+}
+
+export default function RegistroQr({ codigo }:prop) {
+
+	console.log(codigo);
 
 	const QR_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=GERESA-2026-REGISTRO';
 
@@ -15,7 +21,7 @@ export default function RegistroQr() {
 					<img src={QR_URL} alt="Código QR de registro" />
 				</div>
 
-				<div className="qr-texto">◆ Escanea para registrarte ◆</div>
+				<div className="qr-texto">◆ Escanea para ingresar ◆</div>
 			</div>
 
 			<ScrollHint />
