@@ -365,6 +365,108 @@ body {
 	padding-bottom: 20px;
 }
 
+// go qr
+// Variables (ajústalas a tu paleta global)
+$dorado: #d4af37;
+$dorado-claro: #f0d98c;
+$morado-oscuro: #2e1147;
+$morado-boton: #5e3a8c;
+$morado-hover: #7148a8;
+
+.goQR {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  z-index: 10;
+
+  // Si tu contenedor padre no es position: relative, agrégalo
+  // para que este botón se posicione respecto a él.
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 62px;
+    height: 62px;
+    padding: 0;
+
+    border: 2px solid $dorado;
+    border-radius: 50%;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, $morado-boton 0%, $morado-oscuro 100%);
+    color: $dorado;
+
+    box-shadow:
+      0 6px 14px rgba(0, 0, 0, 0.35),
+      0 0 0 0 rgba($dorado, 0.6);
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+
+    // Pulso sutil para llamar la atención sin molestar
+    animation: goQR-pulse 2.8s ease-in-out infinite;
+
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      border-color: $dorado-claro;
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba($dorado, 0.45);
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $dorado-claro;
+      outline-offset: 3px;
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+    color: $dorado;
+    transition: color 0.25s ease;
+  }
+
+  &__btn:hover &__icon {
+    color: $dorado-claro;
+  }
+}
+
+// Animación de pulso en el halo dorado
+@keyframes goQR-pulse {
+  0% {
+    box-shadow:
+      0 6px 14px rgba(0, 0, 0, 0.35),
+      0 0 0 0 rgba($dorado, 0.55);
+  }
+  70% {
+    box-shadow:
+      0 6px 14px rgba(0, 0, 0, 0.35),
+      0 0 0 14px rgba($dorado, 0);
+  }
+  100% {
+    box-shadow:
+      0 6px 14px rgba(0, 0, 0, 0.35),
+      0 0 0 0 rgba($dorado, 0);
+  }
+}
+
+// Respeta a quienes prefieren menos animaciones
+@media (prefers-reduced-motion: reduce) {
+  .goQR__btn {
+    animation: none;
+  }
+}
+
 // ============ 2. INVITACIÓN ============
 .slide-invitacion {
 	background: linear-gradient(180deg, $marfil 0%, #f0e8f5 100%);

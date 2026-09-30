@@ -4,7 +4,6 @@ export type Invitado = {
 };
 
 const invitados: Invitado[] = [
-
 	{
 		nombre: "Renato Renzo Luna Herrera",
 		codigo: "000000"

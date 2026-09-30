@@ -1,4 +1,5 @@
 import ScrollHint from "@/components/ScrollHint";
+import { QRCodeSVG } from 'qrcode.react';
 
 interface prop {
 	codigo: string
@@ -6,9 +7,7 @@ interface prop {
 
 export default function RegistroQr({ codigo }:prop) {
 
-	console.log(codigo);
-
-	const QR_URL = 'https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=GERESA-2026-REGISTRO';
+	// const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=${codigo}`;
 
 	return (
 		<section className="slide slide-registro" id="s7">
@@ -18,7 +17,12 @@ export default function RegistroQr({ codigo }:prop) {
 				<p>Escanea el código QR para confirmar tu participación en las actividades conmemorativas.</p>
 
 				<div className="qr-container">
-					<img src={QR_URL} alt="Código QR de registro" />
+					<QRCodeSVG 
+						value={codigo} 
+						size={256}
+						level="M" // Nivel de corrección de errores (L, M, Q, H)
+					/>
+					{/* <img src={QR_URL} alt="Código QR de registro" /> */}
 				</div>
 
 				<div className="qr-texto">◆ Escanea para ingresar ◆</div>
