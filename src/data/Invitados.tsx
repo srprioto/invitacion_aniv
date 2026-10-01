@@ -109,7 +109,11 @@ const invitados: Invitado[] = [
 	{
 		nombre: "Marco Antonio Muñiz Silva",
 		codigo: "4NXVzZ"
-	}
+	},
+	{
+		nombre: "Deisy Clarivel Paredes Herrera",
+		codigo: "4dVvoB"
+	},
 
 
 
