@@ -5,7 +5,7 @@ $morado-profundo: #2e1a47;
 $morado: #3b1e5a;
 $morado-medio: #5b3a82;
 $morado-suave: #7b5ea7;
-$dorado: #c9a227;
+$dorado: #c9a24a;
 $dorado-claro: #e8d9a0;
 $marfil: #f9f6f0;
 $gris: #5a5a5a;
@@ -179,13 +179,13 @@ body {
 	font-size: 0.65rem;
 	letter-spacing: 4px;
 	text-transform: uppercase;
-	color: $dorado;
+	color: $dorado!important;
 	margin-bottom: 14px;
 	font-weight: 600;
 	text-align: center;
 
 	&--light {
-		color: $dorado-claro;
+		color: $dorado;
 	}
 }
 
@@ -581,7 +581,7 @@ $morado-hover: #7148a8;
 	}
 
 	.section-eyebrow {
-		color: #F5D76E;
+		color: $dorado;
 		font-weight: 700;
 		letter-spacing: 5px;
 		text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
@@ -886,10 +886,11 @@ $morado-hover: #7148a8;
 	}
 
 	p {
-		font-size: 0.9rem;
-		color: $gris;
+		color: #000000;
+		font-size: .9rem;
 		font-weight: 300;
 		line-height: 1.4;
+		font-style: italic;
 	}
 }
 
@@ -930,7 +931,7 @@ $divisor: rgba(43, 29, 18, 0.08);
 }
 
 .programa-lista__num {
-  font-family: $font-display;
+  color: #c9a24a!important;
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1;
@@ -954,11 +955,12 @@ $divisor: rgba(43, 29, 18, 0.08);
 }
 
 .programa-lista__detalle {
-  margin: 0.4rem 0 0;
-  font-size: .9rem;
-  line-height: 1.5;
-  color: $texto-suave;
-  max-width: 46ch;
+    color: #000000;
+    max-width: 46ch;
+    margin: .4rem 0 0;
+    font-size: .9rem;
+    line-height: 1.5;
+    font-style: italic;
 }
 
 // ============================
@@ -1814,17 +1816,15 @@ $divisor: rgba(43, 29, 18, 0.08);
    FOTO CON CARRUSEL AUTOMÁTICO
    ============================================================ */
 .cierre-foto {
-	position: relative;
-	width: 100%;
-	max-width: 320px;
-	margin: 0 auto;
-	border-radius: 16px;
-	overflow: hidden;
-	border: 1px solid rgba($dorado, 0.4);
-	aspect-ratio: 4 / 3;      /* define la altura según el ancho */
-	box-shadow:
-		0 20px 50px rgba(0, 0, 0, 0.5),
-		inset 0 0 0 1px rgba($dorado, 0.15);
+	aspect-ratio: 7 / 3;
+    border: 1px solid #c9a24a66;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px #00000080, inset 0 0 0 1px #c9a24a26;
 }
 
 /* Imágenes apiladas — solo la activa se ve */
@@ -1965,6 +1965,11 @@ $divisor: rgba(43, 29, 18, 0.08);
 	color: $dorado-claro;
 	letter-spacing: 3px;
 	margin-bottom: 14px;
+}
+
+.footer-titulo {
+    margin: 19px 0;
+    font-size: 0.9em;
 }
 
 .footer-info {

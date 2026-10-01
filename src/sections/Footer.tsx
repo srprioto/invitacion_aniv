@@ -7,6 +7,10 @@ export default function Footer() {
 			<div className="slide-inner">
 				<div className="footer-logo">GERESA</div>
 
+				<div className="footer-titulo">
+					Oracion del Señor de los Milagros!
+				</div>
+
 				<div className="footer-info">
 					Señor de los Milagros, fuente de consuelo y esperanza, ante ti nos postramos con humildad y devoción. Tú, que conoces nuestros corazones y nuestras luchas, guíanos con tu infinita misericordia por el camino de la fe y la paz. Que tu sagrada imagen nos cubra y proteja, alejando de nosotros todo mal, y que, bajo tu bendición, encontremos siempre el refugio y el amor que solo tú puedes otorgar.
 					Amén.

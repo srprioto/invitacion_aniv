@@ -53,7 +53,7 @@ export default function Programa() {
 									<div className="timeline-hora">{hora}</div>
 									<div className="timeline-body">
 										<h4>{titulo}</h4>
-										<p>{detalle}</p>
+										<p className="detalles">{detalle}</p>
 									</div>
 								</div>
 							))}

@@ -6,91 +6,97 @@ export type Invitado = {
 const invitados: Invitado[] = [
 	{
 		nombre: "Renato Renzo Luna Herrera",
-		codigo: "000000"
+		codigo: "666666"
 	},
 	{
 		nombre: "Danny Robert Moscoso Sanchez",
-		codigo: "111111"
+		codigo: "m15n8q"
 	},
-
 	{
 		nombre: "Abel Rimasca Chacon",
 		codigo: "f82h4d"
 	},
 	{
-		nombre: "María Elena López Hernández",
+		nombre: "Santiago Quispe Peralta",
 		codigo: "b94k7s"
 	},
 	{
-		nombre: "Luis Fernando Pérez Martínez",
+		nombre: "Maria Del Carmen Anaya Jucharo",
 		codigo: "m15n8q"
 	},
+
+
+
+
+	
+
+
 	{
-		nombre: "Ana Paula García González",
+		nombre: "María Elena López Hernández",
 		codigo: "t36p2w"
 	},
 	{
-		nombre: "Carlos Alberto Sánchez Ramírez",
+		nombre: "María Elena López Hernández",
 		codigo: "v74x9z"
 	},
 	{
-		nombre: "Sofía Valentina Flores Torres",
+		nombre: "María Elena López Hernández",
 		codigo: "r61j3c"
 	},
 	{
-		nombre: "Diego Alejandro Díaz Vásquez",
+		nombre: "María Elena López Hernández",
 		codigo: "g85m2k"
 	},
 	{
-		nombre: "Laura Camila Castro Romero",
+		nombre: "María Elena López Hernández",
 		codigo: "p19q4s"
 	},
 	{
-		nombre: "Andrés Felipe Espinoza Ruiz",
+		nombre: "María Elena López Hernández",
 		codigo: "d37v6b"
 	},
 	{
-		nombre: "Valeria Alejandra Mendoza Silva",
+		nombre: "María Elena López Hernández",
 		codigo: "n52w8x"
 	},
 	{
-		nombre: "Francisco Javier Delgado Morales",
+		nombre: "María Elena López Hernández",
 		codigo: "l46f9t"
 	},
 	{
-		nombre: "Mariana Isabel Ortega Ríos",
+		nombre: "María Elena López Hernández",
 		codigo: "h18k3z"
 	},
 	{
-		nombre: "José Antonio Castillo Jiménez",
+		nombre: "María Elena López Hernández",
 		codigo: "c73r5v"
 	},
 	{
-		nombre: "Daniela Fernanda Gutiérrez Ortiz",
+		nombre: "María Elena López Hernández",
 		codigo: "x29p4m"
 	},
 	{
-		nombre: "Miguel Ángel Navarro Ramos",
+		nombre: "María Elena López Hernández",
 		codigo: "s81t6q"
 	},
 	{
-		nombre: "Gabriela Beatriz Salazar Cruz",
+		nombre: "María Elena López Hernández",
 		codigo: "w45n2j"
 	},
 	{
-		nombre: "Santiago Emmanuel Reyes Aguilar",
+		nombre: "María Elena López Hernández",
 		codigo: "k62b7v"
 	},
 	{
-		nombre: "Lucía Victoria Rojas Alvarado",
+		nombre: "María Elena López Hernández",
 		codigo: "f93m4s"
 	},
 	{
-		nombre: "Manuel Eduardo Acosta Herrera",
+		nombre: "María Elena López Hernández",
 		codigo: "z14t8p"
 	},
 	{
-		nombre: "Natalia Salomé Medina Vargas",
+		nombre: "María Elena López Hernández",
 		codigo: "q76v3d"
 	}
 ];

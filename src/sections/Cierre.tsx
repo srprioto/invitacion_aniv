@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import ScrollHint from "@/components/ScrollHint";
 
 const FOTOS_CIERRE = [
-	'/images/SrMilagros.jpg',
-	'/images/img2.webp',
-	'/images/img3.webp',
+	'/images/nosotros/samu.png',
+	'/images/nosotros/nostro1.png',
+	
 ];
 
 export default function Cierre() {
