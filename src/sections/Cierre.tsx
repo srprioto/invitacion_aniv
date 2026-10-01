@@ -56,7 +56,7 @@ export default function Cierre() {
 						<div className="cierre-divider" />
 
 						<p>
-							GERESA celebra, reconoce y agradece a cada uno de sus trabajadores por su entrega, vocación de
+							La GERESA CUSCO celebra, reconoce y agradece a cada uno de sus trabajadores por su entrega, vocación de
 							servicio y amor por el Cusco.
 						</p>
 					</div>

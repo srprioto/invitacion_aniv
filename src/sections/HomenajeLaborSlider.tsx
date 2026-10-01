@@ -17,19 +17,43 @@ const HOMENAJEADOS: HomenajeadoGroup[] = [
 	{
 		anios: 25,
 		personas: [
-			{ nombre: 'Dario F. Navarro Mendoza', foto: '/images/personas/25/dario_navarro.jpeg' },
-			{ nombre: 'Mauro Vargas León', foto: '/images/personas/25/mauro_vargas.jpeg' },
-			{ nombre: 'Manuel G. Vigil Vargas', foto: '/images/personas/25/manuel_vigil.jpeg' },
-			{ nombre: 'Miriam Manya Aqgehua', foto: '/images/personas/25/miriem_manya.jpeg' },
-			{ nombre: 'Wilbert Otano Rojas', foto: '/images/personas/25/wilber_otano.jpg' },
-			{ nombre: 'Carlos E. Vega Centeno Cruzado', foto: '/images/personas/25/carlos_vega_centeno.png' },
+			{ 
+				nombre: 'Dario F. Navarro Mendoza', 
+				foto: '/images/personas/25/dario_navarro.jpeg' 
+			},
+			{ 
+				nombre: 'Mauro Vargas León', 
+				foto: '/images/personas/25/mauro_vargas.jpeg' 
+			},
+			{ 
+				nombre: 'Manuel G. Vigil Vargas', 
+				foto: '/images/personas/25/manuel_vigil.jpeg' 
+			},
+			{ 
+				nombre: 'Miriam Manya Aqquehua', 
+				foto: '/images/personas/25/miriem_manya.jpeg' 
+			},
+			{ 
+				nombre: 'Wilbert Otaño Rojas', 
+				foto: '/images/personas/25/wilber_otano.jpg' 
+			},
+			{ 
+				nombre: 'Carlos E. Vega Centeno Cruzado', 
+				foto: '/images/personas/25/carlos_vega_centeno.png' 
+			},
 		],
 	},
 	{
 		anios: 30,
 		personas: [
-			{ nombre: 'Gloria D. Ochoa Guillén', foto: '/images/personas/30/gloria_ochoa.jpeg' },
-			{ nombre: 'Jackeline P. Velarde Flores', foto: '/images/personas/30/jackeline_velarde.jpeg' },
+			{ 
+				nombre: 'Gloria D. Ochoa Guillén', 
+				foto: '/images/personas/30/gloria_ochoa.jpeg' 
+			},
+			{ 
+				nombre: 'Jackeline P. Velarde Flores', 
+				foto: '/images/personas/30/jackeline_velarde.jpeg' 
+			},
 		],
 	},
 ];

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import ScrollHint from "@/components/ScrollHint";
+import TapHint from '@/components/TapHint';
 
 const copaGeresa = [
 	'/images/campeonato/1.jpg',
@@ -184,6 +185,7 @@ export default function Deportes() {
 						<h4 className="deporte-titulo">Campeonato "Copa GERESA 2026"</h4>
 						<p className="deporte-detalle">Confraternidad institucional</p>
 						<span className="deporte-card__line" aria-hidden="true" />
+						<TapHint />
 					</article>
 
 					<article className="deporte-card" onClick={() => abrirModal('milagros')} role="button" tabIndex={0}>
@@ -194,6 +196,7 @@ export default function Deportes() {
 						<h4 className="deporte-titulo">Novena del Señor de los Milagros</h4>
 						<p className="deporte-detalle">Celebración comunitaria</p>
 						<span className="deporte-card__line" aria-hidden="true" />
+						<TapHint />
 					</article>
 
 					<article className="deporte-card" onClick={() => abrirModal('danzas')} role="button" tabIndex={0}>
@@ -204,6 +207,7 @@ export default function Deportes() {
 						<h4 className="deporte-titulo">Concurso de Danzas</h4>
 						<p className="deporte-detalle">Participación institucional</p>
 						<span className="deporte-card__line" aria-hidden="true" />
+						<TapHint />
 					</article>
 
 					<article className="deporte-card" onClick={() => abrirModal('bandera')} role="button" tabIndex={0}>
@@ -211,9 +215,10 @@ export default function Deportes() {
 							<span className="deporte-icon" aria-hidden="true">🇵🇪</span>
 							<span className="deporte-fecha">11 Oct · 08:30</span>
 						</div>
-						<h4 className="deporte-titulo">Izamiento del Pabellón</h4>
+						<h4 className="deporte-titulo">Izamiento del Pabellón Nacional</h4>
 						<p className="deporte-detalle">Plaza de Armas del Cusco</p>
 						<span className="deporte-card__line" aria-hidden="true" />
+						<TapHint />
 					</article>
 
 				</div>

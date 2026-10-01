@@ -8,7 +8,8 @@ export default function Footer() {
 				<div className="footer-logo">GERESA</div>
 
 				<div className="footer-info">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text
+					Señor de los Milagros, fuente de consuelo y esperanza, ante ti nos postramos con humildad y devoción. Tú, que conoces nuestros corazones y nuestras luchas, guíanos con tu infinita misericordia por el camino de la fe y la paz. Que tu sagrada imagen nos cubra y proteja, alejando de nosotros todo mal, y que, bajo tu bendición, encontremos siempre el refugio y el amor que solo tú puedes otorgar.
+					Amén.
 				</div>
 
 				{/* <div className="footer-fotos">

@@ -195,7 +195,7 @@ body {
 	font-weight: 600;
 	color: $morado-profundo;
 	line-height: 1.15;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 	text-align: center;
 
 	&--tight {
@@ -498,11 +498,17 @@ $morado-hover: #7148a8;
 .invitacion-texto-wrap {
 	text-align: center;
 	.nombre-inv{
+		margin: 5px 0 15px 0;
+		padding: 10px 0;
+		background-color: #f9f6f0;
+		border: 1px solid #330259;
+		border-radius: 10px;
 		margin: 25px 0;
 		p{
 			font-size: 20px;
 			font-weight: 500;
 			margin-top: 8px;
+			margin-bottom: 0;
 		}
 	}
 }
@@ -768,7 +774,7 @@ $morado-hover: #7148a8;
 }
 
 .video-caption {
-	font-family: 'Cormorant Garamond', serif;
+	font-family: $font-display;
 	font-size: 0.95rem;
 	line-height: 1.5;
 	color: rgba(255, 255, 255, 0.9);
@@ -887,6 +893,124 @@ $morado-hover: #7148a8;
 	}
 }
 
+
+// PROGRAMA CENTRAL
+
+$dorado: #c9a24a;
+$dorado-tenue: rgba(201, 162, 74, 0.28);
+$crema: #fbf8f1;
+$texto: #2b1d12;
+$texto-suave: #8a8175;
+$divisor: rgba(43, 29, 18, 0.08);
+
+.slide-programa {
+  background: $crema;
+  color: $texto;
+}
+
+.programa-lista {
+  list-style: none;
+  margin: 2.4rem auto 0;
+  padding: 0;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;                       // el espaciado lo da el padding de cada item
+}
+
+.programa-lista__item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  align-items: start;
+  padding: 0 0 23px 0;
+  // Divisor fino entre items, excepto el primero
+  & + & {
+    border-top: 1px solid $divisor;
+  }
+}
+
+.programa-lista__num {
+  font-family: $font-display;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  color: $dorado-tenue;
+  letter-spacing: 0.02em;
+  padding-top: 4px;
+  user-select: none;
+}
+
+.programa-lista__body {
+  min-width: 0;                 // evita overflow del texto largo
+}
+
+.programa-lista__titulo {
+  margin: 0;
+  font-family: $font-display;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: $texto;
+  line-height: 1.25;
+}
+
+.programa-lista__detalle {
+  margin: 0.4rem 0 0;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: $texto-suave;
+  max-width: 46ch;
+}
+
+// ============================
+// DESKTOP
+// ============================
+@media (min-width: 900px) {
+  .programa-lista {
+    max-width: 760px;
+    margin-top: 3rem;
+  }
+
+  .programa-lista__item {
+    grid-template-columns: 88px 1fr;
+    
+    padding: 1.6rem 0;
+  }
+
+  .programa-lista__num {
+    font-size: 2.2rem;
+    padding-top: 2px;
+  }
+
+  .programa-lista__titulo {
+    font-size: 1.2rem;
+  }
+
+  .programa-lista__detalle {
+    font-size: 0.95rem;
+    max-width: 62ch;
+  }
+}
+
+@media (min-width: 1280px) {
+  .programa-lista {
+    max-width: 860px;
+  }
+
+  .programa-lista__item {
+    grid-template-columns: 104px 1fr;
+    padding: 1.8rem 0;
+  }
+
+  .programa-lista__num {
+    font-size: 2.6rem;
+  }
+
+  .programa-lista__titulo {
+    font-size: 1.3rem;
+  }
+}
+
+
 // ============ 4. RECONOCIMIENTO ============
 .slide-reconocimiento {
 	background: linear-gradient(180deg, $marfil 0%, #efe8f5 100%);
@@ -946,34 +1070,35 @@ $morado-hover: #7148a8;
 	.card-info {
 		padding: 12px 14px 16px;
 		text-align: center;
+		.card-nombre {
+			font-family: $font-display;
+			font-size: 0.95rem;
+			font-weight: 600;
+			color: $morado-profundo;
+			margin-bottom: 4px;
+			line-height: 1.25;
+		}
+
+		.card-cargo {
+			font-size: 0.65rem;
+			color: rgba($morado, 0.6);
+			margin-bottom: 8px;
+		}
+
+		.card-years {
+			display: inline-block;
+			font-size: 0.6rem;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			color: $morado-profundo;
+			background: $dorado-claro;
+			padding: 3px 12px;
+			border-radius: 20px;
+			text-transform: uppercase;
+		}
 	}
 
-	.card-nombre {
-		font-family: $font-display;
-		font-size: 0.95rem;
-		font-weight: 600;
-		color: $morado-profundo;      /* antes era $blanco */
-		margin-bottom: 4px;
-		line-height: 1.25;
-	}
-
-	.card-cargo {
-		font-size: 0.65rem;
-		color: rgba($morado, 0.6);    /* antes era rgba blanco 0.6 */
-		margin-bottom: 8px;
-	}
-
-	.card-years {
-		display: inline-block;
-		font-size: 0.6rem;
-		font-weight: 700;
-		letter-spacing: 1.5px;
-		color: $morado-profundo;
-		background: $dorado-claro;
-		padding: 3px 12px;
-		border-radius: 20px;
-		text-transform: uppercase;
-	}
+	
 
 	.descrip_homenaje {
 		margin: 30px 10px 40px 10px;
@@ -2243,5 +2368,83 @@ $morado-hover: #7148a8;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: rgba(232, 199, 102, 0.7);
+  }
+}
+
+
+
+
+
+
+
+// taphint
+$dorado: #d4af37;
+$dorado-claro: #f0d98c;
+
+.tap-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $dorado;
+  pointer-events: none;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+
+  &__svg {
+    width: 56px;
+    height: 56px;
+    overflow: visible;
+  }
+}
+
+// Círculo pulsante
+.tap-hint__pulse {
+  transform-origin: 32px 32px;
+  transform-box: fill-box;
+  animation: tap-pulse 1.8s ease-out infinite;
+  opacity: 0;
+}
+
+.tap-hint__pulse--delay {
+  animation-delay: 0.9s;
+}
+
+@keyframes tap-pulse {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.9;
+    stroke-width: 2.5;
+  }
+  80% {
+    transform: scale(1.8);
+    opacity: 0;
+    stroke-width: 1;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+    stroke-width: 1;
+  }
+}
+
+// Dedo con leve "tap"
+.tap-hint__finger {
+  transform-origin: 32px 32px;
+  transform-box: fill-box;
+  animation: tap-finger 1.8s ease-in-out infinite;
+}
+
+@keyframes tap-finger {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-2px); }
+  60%      { transform: translateY(1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap-hint__pulse,
+  .tap-hint__finger {
+    animation: none;
+    opacity: 0.6;
   }
 }

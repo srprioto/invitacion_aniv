@@ -10,6 +10,7 @@ import HomenajeLabor from "@/sections/HomenajeLabor";
 import HomenajeLaborSlider from "@/sections/HomenajeLaborSlider";
 import Invitacion from "@/sections/Invitacion";
 import Programa from "@/sections/Programa";
+import ProgramaCentral from "@/sections/ProgramaCentral";
 import RegistroQr from "@/sections/RegistroQr";
 import VideoInv from "@/sections/VideoInv";
 import { useRef } from "react";
@@ -34,6 +35,7 @@ export default function InvitacionClient({ invitado }: Props) {
 		{ id: "s2", label: "Invitación" },
 		{ id: "s2b", label: "VideoInv" },
 		{ id: "s3", label: "Programación" },
+		{ id: "s4", label: "Programación central" },
 		{ id: "s4b", label: "Homenaje institucional" },
 		{ id: "s5", label: "Galería" },
 		{ id: "s6", label: "Deportes" },
@@ -53,6 +55,7 @@ export default function InvitacionClient({ invitado }: Props) {
 				<Invitacion nombreInv={invitado.nombre} />
 				<VideoInv />
 				<Programa />
+				<ProgramaCentral />
 				<HomenajeLaborSlider />
 				<HomenajeLabor />
 				<Deportes />

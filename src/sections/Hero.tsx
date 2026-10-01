@@ -22,7 +22,7 @@ export default function Hero() {
 
 			<div className="hero-top">
 				<img src={logoImg} alt="" />
-				<div className="logo-geresa">GERESA Cusco</div>
+				<div className="logo-geresa">GERESA CUSCO</div>
 				<div className="hero-year">2026</div>
 			</div>
 

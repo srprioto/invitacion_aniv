@@ -11,56 +11,56 @@ interface Homenajeado {
 
 const HOMENAJEADOS: Homenajeado[] = [
 	{ 
-		nombre: 'ABRILL GAMARRA, Marlene',       
+		nombre: 'Marlene Abrill Gamarra',       
 		foto: '/images/personas/70/marlene_abrill.png',
 	},
 	{ 
-		nombre: 'AÑANCA ZUNIGA, Jesús Manuel',   
+		nombre: 'Jesús Manuel Añanca Zuniga',   
 		foto: '/images/personas/70/jesus_ananca.jpg',
 
 	},
 	{ 
-		nombre: 'BACA MENDOZA, Ruth Marina',     
+		nombre: 'Ruth Marina Baca Mendoza',     
 		foto: '/images/personas/70/ruth_baca.jpg',
 
 	},
 	{ 
-		nombre: 'CALLAHUI RIOS, Clorinda',       
+		nombre: 'Clorinda Callahui Rios',       
 		foto: '/images/personas/70/clorinda_callahui.png',
 
 	},
 	{ 
-		nombre: 'FARFAN RIMACHI, Fidel Marcos',  
+		nombre: 'Fidel Marcos Farfan Rimachi',  
 		foto: '/images/personas/70/fidel_farfan.jpeg',
 
 	},
 	{ 
-		nombre: 'FUENTES CARAYHUA, Isabel',      
+		nombre: 'Isabel Fuentes Carayhua',      
 		foto: '/images/personas/70/isabel_fuentes.jpeg',
 
 	},
 	{ 
-		nombre: 'MONGE CASAFRANCA, Ketty Gladys',
+		nombre: 'Ketty Gladys Monge Casafranca',
 		foto: '/images/personas/70/ketty_gladis.png',
 
 	},
 	{ 
-		nombre: 'NAVARRO AMARU, Hermenegilda',   
+		nombre: 'Hermenegilda Navarro Amaru',   
 		foto: '/images/personas/70/hermene_navarro.png',
 
 	},
 	{ 
-		nombre: 'OTAZU PILLCO, Jorge',           
+		nombre: 'Jorge Otazu Pillco',           
 		foto: '/images/personas/70/jorge_otazu.png',
 
 	},
 	{ 
-		nombre: 'PAUCCAR HUAMAN, Antonio',       
+		nombre: 'Antonio Pauccar Huaman',       
 		foto: '/images/personas/70/antonio_paucar.png',
 
 	},
 	{ 
-		nombre: 'SALAS PANTIGOZO, Teofilo',      
+		nombre: 'Teofilo Salas Pantigozo',      
 		foto: '/images/personas/70/teofilo_salas.jpeg',
 
 	},
@@ -126,23 +126,6 @@ export default function HomenajeLabor() {
 					</span>
 					<div className="cierre-divider-claro" />
 				</div>
-
-				{/* <div className="cuadro">
-					<div className="cuadro__marco">
-						<div className="cuadro__pergamino">
-
-							<div className="cuadro__adorno cuadro__adorno--tl"></div>
-							<div className="cuadro__adorno cuadro__adorno--tr"></div>
-							<div className="cuadro__adorno cuadro__adorno--bl"></div>
-							<div className="cuadro__adorno cuadro__adorno--br"></div>
-
-							<p className="cuadro__texto">
-								"No todos tenemos la dicha de tener un(a) excelente compañero(a) de trabajo como tú y por eso te mereces un excelente reconocimiento por tu labor institucional"
-							</p>
-
-						</div>
-					</div>
-				</div> */}
 
 				<div className="slider" ref={sliderRef}>
 					{HOMENAJEADOS.map(({ nombre, foto, cargo }) => (

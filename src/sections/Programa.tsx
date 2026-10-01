@@ -29,7 +29,7 @@ export default function Programa() {
 			{ 
 				hora: '11:00', 
 				titulo: 'Compartir Institucional', 
-				detalle: 'Ceremonia protocolar y reconocimientos' },
+				detalle: 'Desayuno de confraternidad' },
 			{
 				hora: '13:30',
 				titulo: 'Almuerzo de Confraternidad',
@@ -41,8 +41,8 @@ export default function Programa() {
 	return (
 		<section className="slide slide-programa" id="s3">
 			<div className="slide-inner">
-				<div className="section-eyebrow">Día Central · 7 de Octubre</div>
-				<h2 className="section-title">Programa Oficial</h2>
+				<div className="section-eyebrow">7 de Octubre</div>
+				<h2 className="section-title">Día Oficial</h2>
 
 				<div className="programa-grid">
 					{TIMELINE_COLUMNS.map((column, i) => (
