@@ -18,7 +18,12 @@ export default function Invitacion({ nombreInv }:prop) {
 
 						<div className="nombre-inv">
 							<span>Estimado(A)</span>
-							<p>{ nombreInv }</p>
+							<p>{ 
+								nombreInv.toLowerCase()
+								.split(' ')
+								.map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+								.join(' ') 
+							}</p>
 						</div>
 
 						<p>

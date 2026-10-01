@@ -6,99 +6,123 @@ export type Invitado = {
 const invitados: Invitado[] = [
 	{
 		nombre: "Renato Renzo Luna Herrera",
-		codigo: "666666"
+		codigo: "666ooo"
+	},
+	{
+		nombre: "JAIME JUCULACA CHURA",
+		codigo: "04WYd3"
+	},
+	{
+		nombre: "JUAN ALBERTO HUARACHI PUMACHAPI",
+		codigo: "0QdpMq"
+	},
+	{
+		nombre: "JOSE SANTOS MAMANI CCANAHUIRE",
+		codigo: "0emiL7"
+	},
+	{
+		nombre: "GUINETTA YABAR HERRERA",
+		codigo: "0izwRm"
+	},
+	{
+		nombre: "LUZ MARLENY MEZA PUMAHUILLCA",
+		codigo: "0uLjHV"
+	},
+	{
+		nombre: "MARIA DEL CARMEN ANAYA JUCHARO",
+		codigo: "0w2aRh"
+	},
+	{
+		nombre: "GUINETTA YABAR HERRERA",
+		codigo: "0zCpm4"
+	},
+	{
+		nombre: "Alex Jaramillo Corrales",
+		codigo: "14SLTB"
+	},
+	{
+		nombre: "Mavel Sarmiento Huanca",
+		codigo: "1CSLC9"
 	},
 	{
 		nombre: "Danny Robert Moscoso Sanchez",
-		codigo: "m15n8q"
-	},
-	{
-		nombre: "Abel Rimasca Chacon",
 		codigo: "f82h4d"
 	},
 	{
+		nombre: "Abel Rimasca Chacon",
+		codigo: "1EMxKP"
+	},
+	{
 		nombre: "Santiago Quispe Peralta",
-		codigo: "b94k7s"
-	},
-	{
-		nombre: "Maria Del Carmen Anaya Jucharo",
-		codigo: "m15n8q"
+		codigo: "1bM79c"
 	},
 
+	{
+		nombre: "Karla Zavala Vargas",
+		codigo: "1hRfUX"
+	},
+	{
+		nombre: "Raysha Shyrley Silva Jordan",
+		codigo: "1hSUWp"
+	},
+	{
+		nombre: "Cesar Fidel Aragón dueñas",
+		codigo: "1j3KGp"
+	},
+	{
+		nombre: "Ruth Marina Baca Mendoza",
+		codigo: "1kHJyD"
+	},
+	{
+		nombre: "JESSICA CARMEN TTITO QUISPE",
+		codigo: "1yYZaj"
+	},
+	{
+		nombre: "Alejandro Silva Rodríguez",
+		codigo: "2EnXFp"
+	},
+	{
+		nombre: "Pedro Mamani Zapana",
+		codigo: "2LUkSg"
+	},
+	{
+		nombre: "Rosa Mariela Huaman Ochoa",
+		codigo: "2U4GKI"
+	},
+	{
+		nombre: "Jessica Año Meza",
+		codigo: "2wPQhQ"
+	},
+	{
+		nombre: "Hilda Hilaria Pillco Ortega",
+		codigo: "3kKLHb"
+	},
+	{
+		nombre: "Hilda Hilaria Pillco Ortega",
+		codigo: "3kKLHb"
+	},
 
-
-
-	
-
-
 	{
-		nombre: "María Elena López Hernández",
-		codigo: "t36p2w"
+		nombre: "Lady Diana Leiva Bayona",
+		codigo: "3us3jE"
 	},
 	{
-		nombre: "María Elena López Hernández",
-		codigo: "v74x9z"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "r61j3c"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "g85m2k"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "p19q4s"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "d37v6b"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "n52w8x"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "l46f9t"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "h18k3z"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "c73r5v"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "x29p4m"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "s81t6q"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "w45n2j"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "k62b7v"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "f93m4s"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "z14t8p"
-	},
-	{
-		nombre: "María Elena López Hernández",
-		codigo: "q76v3d"
+		nombre: "Marco Antonio Muñiz Silva",
+		codigo: "4NXVzZ"
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
 
 
