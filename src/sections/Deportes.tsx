@@ -19,9 +19,17 @@ const copaGeresa = [
 ];
 
 const srMilagros = [
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
-	'/images/SrMilagros.jpg',
+	'/images/novena/1.jpeg',
+	'/images/novena/2.jpeg',
+	'/images/novena/3.jpeg',
+	'/images/novena/4.jpeg',
+	'/images/novena/5.jpeg',
+	'/images/novena/6.jpeg',
+	'/images/novena/7.jpeg',
+	'/images/novena/8.jpeg',
+	'/images/novena/9.jpeg',
+	'/images/novena/10.jpeg',
+
 ];
 
 const concurDanzas = [

@@ -12,56 +12,56 @@ interface Homenajeado {
 const HOMENAJEADOS: Homenajeado[] = [
 	{ 
 		nombre: 'ABRILL GAMARRA, Marlene',       
-		foto: '/images/SrMilagros.jpg'
+		foto: '/images/personas/70/marlene_abrill.png',
 	},
 	{ 
 		nombre: 'AÑANCA ZUNIGA, Jesús Manuel',   
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/jesus_ananca.jpg',
 
 	},
 	{ 
 		nombre: 'BACA MENDOZA, Ruth Marina',     
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/ruth_baca.jpg',
 
 	},
 	{ 
 		nombre: 'CALLAHUI RIOS, Clorinda',       
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/clorinda_callahui.png',
 
 	},
 	{ 
 		nombre: 'FARFAN RIMACHI, Fidel Marcos',  
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/fidel_farfan.jpeg',
 
 	},
 	{ 
 		nombre: 'FUENTES CARAYHUA, Isabel',      
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/isabel_fuentes.jpeg',
 
 	},
 	{ 
 		nombre: 'MONGE CASAFRANCA, Ketty Gladys',
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/ketty_gladis.png',
 
 	},
 	{ 
 		nombre: 'NAVARRO AMARU, Hermenegilda',   
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/hermene_navarro.png',
 
 	},
 	{ 
 		nombre: 'OTAZU PILLCO, Jorge',           
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/jorge_otazu.png',
 
 	},
 	{ 
 		nombre: 'PAUCCAR HUAMAN, Antonio',       
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/antonio_paucar.png',
 
 	},
 	{ 
 		nombre: 'SALAS PANTIGOZO, Teofilo',      
-		foto: '/images/SrMilagros.jpg',
+		foto: '/images/personas/70/teofilo_salas.jpeg',
 
 	},
 ];
