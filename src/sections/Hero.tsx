@@ -3,7 +3,7 @@ import ScrollHint from "@/components/ScrollHint";
 
 export default function Hero() {
 
-	const DEFAULT_PHOTO = '/images/SrMilagros.jpg';
+	const DEFAULT_PHOTO = '/images/SrMilagros3.jpeg';
 	const logoImg = '/images/logoGeresa.png';
 
 	const handleClick = () => {
@@ -45,7 +45,7 @@ export default function Hero() {
 			</div>
 
 			<div className="hero-footer">
-				Gerencia Regional de Salud Cusco · Dirección Ejecutiva de Inteligencia Sanitaria
+				Gerencia Regional de Salud Cusco <br /> Dirección Ejecutiva de Inteligencia Sanitaria
 			</div>
 
 			<BtnQr onClic={handleClick} />

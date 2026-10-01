@@ -6,7 +6,7 @@ interface prop {
 
 export default function Invitacion({ nombreInv }:prop) {
 
-	const DEFAULT_PHOTO = '/images/SrMilagros2.png';
+	const DEFAULT_PHOTO = '/images/nosotros/nostro1.png';
 
 	return (
 		<section className="slide slide-invitacion" id="s2">
@@ -31,8 +31,11 @@ export default function Invitacion({ nombreInv }:prop) {
 						<p>Agradecemos su gentil asistencia.</p>
 					</div>
 
-					<div className="foto-secundaria">
-						<img src={DEFAULT_PHOTO} alt="Equipo institucional" />
+					<div className="box_foto_secundaria">
+						<div className="section-eyebrow">Mayordomos 2026</div>
+						<div className="foto-secundaria">
+							<img src={DEFAULT_PHOTO} alt="Equipo institucional" />
+						</div>
 					</div>
 				</div>
 			</div>

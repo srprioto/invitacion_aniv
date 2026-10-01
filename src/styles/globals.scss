@@ -513,21 +513,28 @@ $morado-hover: #7148a8;
 	}
 }
 
-.foto-secundaria {
-	margin: 24px auto 0;
-	max-width: 320px;
-	border-radius: 16px;
-	overflow: hidden;
-	box-shadow: 0 16px 40px rgba($morado, 0.18);
+.box_foto_secundaria{
+	
+	p{
+		margin-bottom: 10px;
+    	font-weight: 700;
+	}
 
-	img {
-		width: 100%;
-		display: block;
-		height: 180px;
-		object-fit: cover;
+	.foto-secundaria {
+		margin: auto 0;
+		max-width: 420px;
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 16px 40px rgba($morado, 0.18);
+
+		img {
+			width: 100%;
+			display: block;
+			height: 160px;
+			object-fit: cover;
+		}
 	}
 }
-
 
 
 // ============ BLOQUES ============
