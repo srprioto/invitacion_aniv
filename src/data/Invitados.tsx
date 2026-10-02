@@ -118,6 +118,10 @@ const invitados: Invitado[] = [
 		nombre: "IVAN ATAYUPANQUI RONDON",
 		codigo: "4j65yi"
 	},
+	{
+		nombre: "Nelly oscco abarca",
+		codigo: "53OZpE"
+	},
 
 
 
