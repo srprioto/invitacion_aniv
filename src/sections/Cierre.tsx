@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import ScrollHint from "@/components/ScrollHint";
+import ZoomableImage from '@/components/ZoomableImage';
 
 
 const FOTOS_CIERRE = [
@@ -43,15 +44,20 @@ export default function Cierre() {
 			<div className="slide-inner">
 				<div className="cierre-grid">
 					<div className="cierre-foto">
-						{FOTOS_CIERRE.map((src, i) => (
-							<img
-								key={src + i}
-								src={src}
-								alt="Equipo GERESA unido"
-								className={`cierre-foto__img ${i === index ? 'is-active' : ''}`}
-								aria-hidden={i !== index}
-							/>
-						))}
+						<ZoomableImage
+								src={FOTOS_CIERRE[index]}
+								alt="Equipo institucional"
+							>
+							{FOTOS_CIERRE.map((src, i) => (
+								<img
+									key={src + i}
+									src={src}
+									alt="Equipo GERESA unido"
+									className={`cierre-foto__img ${i === index ? 'is-active' : ''}`}
+									aria-hidden={i !== index}
+								/>
+							))}
+						</ZoomableImage>
 						<div className="cierre-foto__overlay" aria-hidden="true" />
 						<div className="cierre-foto__frame" aria-hidden="true" />
 					</div>

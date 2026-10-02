@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import ScrollHint from "@/components/ScrollHint";
+import ZoomableImage from '@/components/ZoomableImage';
 
 const FOTOS_SECUNDARIAS = [
 	'/images/nosotros/nostro1.png',
@@ -66,16 +67,22 @@ export default function Invitacion({ nombreInv }: Prop) {
 
 					<div className="box_foto_secundaria">
 						<div className="section-eyebrow">Mayordomos 2026</div>
+
 						<div className="foto-secundaria">
-							{FOTOS_SECUNDARIAS.map((src, i) => (
-								<img
-									key={src + i}
-									src={src}
-									alt="Equipo institucional"
-									className={`foto-secundaria__img ${i === index ? 'is-active' : ''}`}
-									aria-hidden={i !== index}
-								/>
-							))}
+							<ZoomableImage
+								src={FOTOS_SECUNDARIAS[index]}
+								alt="Equipo institucional"
+							>
+								{FOTOS_SECUNDARIAS.map((src, i) => (
+									<img
+										key={src + i}
+										src={src}
+										alt="Equipo institucional"
+										className={`foto-secundaria__img ${i === index ? 'is-active' : ''}`}
+										aria-hidden={i !== index}
+									/>
+								))}
+							</ZoomableImage>
 						</div>
 					</div>
 				</div>

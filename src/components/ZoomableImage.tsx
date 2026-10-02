@@ -48,7 +48,6 @@ export default function ZoomableImage({ children, src, alt = '' }: ZoomableImage
 		dragStart.current = null;
 	};
 
-	// touch: pinch + drag
 	const touchStart = useRef<{ x: number; y: number; ox: number; oy: number; dist: number; zoom: number } | null>(null);
 
 	const getDist = (t: React.TouchList) => {
@@ -150,6 +149,7 @@ export default function ZoomableImage({ children, src, alt = '' }: ZoomableImage
 						×
 					</button>
 					<img
+						key={src}          // 👈 fuerza recarga al cambiar de foto
 						src={src}
 						alt={alt}
 						draggable={false}
