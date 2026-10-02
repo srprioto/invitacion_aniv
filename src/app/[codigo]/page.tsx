@@ -1,8 +1,8 @@
 import invitados from "@/data/Invitados";
-import InvitacionClient from "./InvitacionClient";
+
 import Rrror from "@/components/Rrror";
-import Preloader from "@/components/Preloader";
 import { ALL_FONTS, ALL_IMAGES, ALL_VIDEOS } from "@/data/assets";
+import InvitacionSobre from "./InvitacionSobre";
 
 export async function generateStaticParams() {
 	return invitados.map((invitado) => ({
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 }
 
 type Props = {
-  params: Promise<{ codigo: string }>;
+	params: Promise<{ codigo: string }>;
 };
 
 export default async function Page({ params }: Props) {
@@ -22,15 +22,15 @@ export default async function Page({ params }: Props) {
 		return <Rrror />;
 	}
 
-	return <Preloader
-	    images={ALL_IMAGES}
-		videos={ALL_VIDEOS}
-		fonts={ALL_FONTS}
-		cacheKey="invitacion-cargada"
-	>
-		<InvitacionClient invitado={invitado} />
-	</Preloader>
-	
-	
-	
+	// El sobre es el "nivel 1": se muestra siempre y hace la precarga por dentro.
+	// InvitacionClient (nivel 2) se monta solo cuando el sobre se abre.
+	return (
+		<InvitacionSobre
+			invitado={invitado}
+			images={ALL_IMAGES}
+			videos={ALL_VIDEOS}
+			fonts={ALL_FONTS}
+			cacheKey="invitacion-cargada"
+		/>
+	);
 }

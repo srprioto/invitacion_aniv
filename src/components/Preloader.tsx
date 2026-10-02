@@ -2,44 +2,83 @@
 
 import { useEffect, useState } from 'react';
 
-type Props = {
+export type PreloadPhase = 'checking' | 'loading' | 'ready';
+
+type Options = {
 	images?: string[];
 	videos?: string[];
 	fonts?: string[];
-	minDuration?: number;      // ms mínimos visibles
-	maxDuration?: number;      // ms máximos antes de forzar salida
-	cacheKey?: string;         // clave para sessionStorage
-	children: React.ReactNode;
+	minDuration?: number; // ms mínimos de carga visible
+	maxDuration?: number; // ms máximos antes de forzar el fin
+	cacheKey?: string; // clave de sessionStorage
 };
 
-export default function Preloader({
+const LABELS = [
+	'Preparando tu invitación',
+	'Cargando imágenes',
+	'Afinando los últimos detalles',
+];
+
+function readCache(key: string) {
+	try {
+		return sessionStorage.getItem(key) === '1';
+	} catch {
+		return false;
+	}
+}
+
+function writeCache(key: string) {
+	try {
+		sessionStorage.setItem(key, '1');
+	} catch {
+		// ignorar (modo privado, etc.)
+	}
+}
+
+/**
+ * Misma lógica del Preloader (imágenes, fuentes, videos, progreso, tiempos y
+ * caché de sesión), pero sin pintar nada: devuelve el estado para que el sobre
+ * muestre la carga donde corresponda.
+ *
+ * phase:
+ *  - 'checking': aún no sabemos si hay caché (primer render, igual en servidor y cliente)
+ *  - 'loading' : cargando assets
+ *  - 'ready'   : todo listo
+ */
+export function useAssetPreload({
 	images = [],
 	videos = [],
 	fonts = [],
 	minDuration = 900,
 	maxDuration = 15000,
 	cacheKey = 'preloader-done',
-	children,
-}: Props) {
+}: Options) {
+	const [phase, setPhase] = useState<PreloadPhase>('checking');
 	const [progress, setProgress] = useState(0);
-	const [done, setDone] = useState(false);
-	const [label, setLabel] = useState('Preparando tu invitación');
+	const [label, setLabel] = useState(LABELS[0]);
+
+	// Claves estables para no relanzar el efecto si el array cambia de referencia
+	const imagesKey = JSON.stringify(images);
+	const videosKey = JSON.stringify(videos);
+	const fontsKey = JSON.stringify(fonts);
 
 	useEffect(() => {
-		// Si ya cargó en esta sesión, saltar el preloader
-		if (typeof window !== 'undefined' && sessionStorage.getItem(cacheKey) === '1') {
+		// Ya cargó en esta sesión: saltar la carga
+		if (readCache(cacheKey)) {
 			setProgress(100);
-			setDone(true);
+			setPhase('ready');
 			return;
 		}
 
+		setPhase('loading');
+
 		let cancelado = false;
+		let finished = false;
 		const start = Date.now();
 
-		// Deduplicar
-		const imgs = Array.from(new Set(images));
-		const vids = Array.from(new Set(videos));
-		const fnts = Array.from(new Set(fonts));
+		const imgs = Array.from(new Set<string>(JSON.parse(imagesKey)));
+		const vids = Array.from(new Set<string>(JSON.parse(videosKey)));
+		const fnts = Array.from(new Set<string>(JSON.parse(fontsKey)));
 
 		const tasks: Promise<void>[] = [];
 
@@ -59,6 +98,10 @@ export default function Preloader({
 		fnts.forEach((src) => {
 			tasks.push(
 				new Promise<void>((res) => {
+					if (document.head.querySelector(`link[rel="preload"][href="${src}"]`)) {
+						res();
+						return;
+					}
 					const link = document.createElement('link');
 					link.rel = 'preload';
 					link.as = 'font';
@@ -76,85 +119,54 @@ export default function Preloader({
 		vids.forEach((src) => {
 			tasks.push(
 				fetch(src, { cache: 'force-cache' })
-				.then(() => undefined)
-				.catch(() => undefined)
+					.then(() => undefined)
+					.catch(() => undefined)
 			);
 		});
 
-		// ---- Etiquetas rotativas para dar sensación de avance ----
-		const labels = [
-			'Preparando tu invitación',
-			'Cargando imágenes',
-			'Afinando los últimos detalles',
-		];
+		// ---- Etiquetas rotativas ----
 		let labelIdx = 0;
 		const labelTimer = setInterval(() => {
-			labelIdx = (labelIdx + 1) % labels.length;
-			if (!cancelado) setLabel(labels[labelIdx]);
+			labelIdx = (labelIdx + 1) % LABELS.length;
+			if (!cancelado) setLabel(LABELS[labelIdx]);
 		}, 2200);
 
 		// ---- Progreso ----
 		const total = tasks.length || 1;
 		let completed = 0;
-
 		tasks.forEach((t) => {
 			t.then(() => {
 				completed++;
-				if (!cancelado) {
-					setProgress(Math.round((completed / total) * 100));
-				}
+				if (!cancelado) setProgress(Math.round((completed / total) * 100));
 			});
 		});
 
 		// ---- Cierre ----
+		const finish = () => {
+			if (cancelado || finished) return;
+			finished = true;
+			writeCache(cacheKey);
+			setProgress(100);
+			setPhase('ready');
+		};
+
+		let finishTimer: ReturnType<typeof setTimeout> | undefined;
 		Promise.all(tasks).then(() => {
-			const elapsed = Date.now() - start;
-			const remaining = Math.max(0, minDuration - elapsed);
-			setTimeout(() => {
-				if (cancelado) return;
-				sessionStorage.setItem(cacheKey, '1');
-				setDone(true);
-			}, remaining);
+			if (cancelado) return;
+			const remaining = Math.max(0, minDuration - (Date.now() - start));
+			finishTimer = setTimeout(finish, remaining);
 		});
 
 		// ---- Seguridad ----
-		const safety = setTimeout(() => {
-			if (cancelado) return;
-			sessionStorage.setItem(cacheKey, '1');
-			setDone(true);
-		}, maxDuration);
+		const safety = setTimeout(finish, maxDuration);
 
 		return () => {
 			cancelado = true;
 			clearInterval(labelTimer);
 			clearTimeout(safety);
+			if (finishTimer) clearTimeout(finishTimer);
 		};
-	}, [images, videos, fonts, minDuration, maxDuration, cacheKey]);
+	}, [imagesKey, videosKey, fontsKey, minDuration, maxDuration, cacheKey]);
 
-	return (
-		<>
-			{!done && (
-				<div className="preloader">
-					<div className="preloader__logo">
-						<img src="/images/logoGeresa.png" alt="" />
-					</div>
-
-					<div className="preloader__spinner" aria-hidden="true" />
-
-					<div className="preloader__label">{label}</div>
-
-					<div className="preloader__bar">
-						<div
-							className="preloader__bar-fill"
-							style={{ width: `${progress}%` }}
-						/>
-					</div>
-
-					<div className="preloader__pct">{progress}%</div>
-				</div>
-			)}
-
-			{done && <div className="preloader__content">{children}</div>}
-		</>
-	);
+	return { phase, progress, label };
 }

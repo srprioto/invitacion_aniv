@@ -1,4 +1,6 @@
 @use './preloader';
+@use './sobre.scss';
+
 
 // ---------- Variables ----------
 $morado-profundo: #2e1a47;
@@ -52,6 +54,13 @@ $font-display: var(--font-cormorant), 'Cormorant Garamond', serif;
     border-radius: 10px;
 }
 
+
+.mb10{
+	margin-bottom: 10px;
+}
+.mt30{
+	margin-top: 30px;
+}
 
 
 // ---------- Reset ----------
@@ -2466,3 +2475,4 @@ $dorado-claro: #f0d98c;
     opacity: 0.6;
   }
 }
+
