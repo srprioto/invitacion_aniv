@@ -33,10 +33,6 @@ const invitados: Invitado[] = [
 		codigo: "0w2aRh"
 	},
 	{
-		nombre: "GUINETTA YABAR HERRERA",
-		codigo: "0zCpm4"
-	},
-	{
 		nombre: "Alex Jaramillo Corrales",
 		codigo: "14SLTB"
 	},
@@ -123,7 +119,42 @@ const invitados: Invitado[] = [
 		codigo: "53OZpE"
 	},
 
-
+	{
+		nombre: "edgar waldo capcha salcedo",
+		codigo: "583CNJ"
+	},
+	{
+		nombre: "john ross fuertes",
+		codigo: "58rF7x"
+	},
+	{
+		nombre: "pablo fidel grageda ancca",
+		codigo: "5AZB7i"
+	},
+	{
+		nombre: "maribel caller",
+		codigo: "5D8VuJ"
+	},
+	{
+		nombre: "fernando lobalton ramos",
+		codigo: "5bq72k"
+	},
+	{
+		nombre: "irvin condori champi",
+		codigo: "5iXU2D"
+	},
+	{
+		nombre: "segundo canahuire",
+		codigo: "5ptBdq"
+	},
+	{
+		nombre: "dario navarro mendoza",
+		codigo: "6DspiT"
+	},
+	{
+		nombre: "Carlos Giovanny Latorre Quispe",
+		codigo: "6HndMU"
+	},
 
 
 
