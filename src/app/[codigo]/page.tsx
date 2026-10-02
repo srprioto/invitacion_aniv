@@ -1,4 +1,3 @@
-// src/app/[codigo]/page.tsx
 import invitados from "@/data/Invitados";
 import InvitacionClient from "./InvitacionClient";
 import Rrror from "@/components/Rrror";
