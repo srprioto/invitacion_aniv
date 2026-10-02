@@ -159,8 +159,8 @@ export default function VideoInv() {
 			<div className="texture-dots" aria-hidden="true" />
 
 			<div className="slide-inner video-inner">
-				<div className="section-eyebrow">Mensaje del Gerente Regional</div>
-				<h2 className="section-title">Palabras de Aniversario</h2>
+				<div className="section-eyebrow titulo_vid">Invitacion</div>
+				<h2 className="section-title">Director Ejecutivo de Inteligencia Sanitaria</h2>
 
 				<div className="scroll-frame">
 					<div className="scroll-frame__cap scroll-frame__cap--top" aria-hidden="true" />
