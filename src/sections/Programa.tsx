@@ -39,19 +39,12 @@ export default function Programa() {
 
 			{ 
 				hora: '10:00', 
-				titulo: 'Procesión de la Sagrada Imagen', 
-				detalle: 'Señor de los Milagros' 
-			},
-
-
-			{ 
-				hora: '10:00', 
 				titulo: 'Compartir institucional', 
 				detalle: 'Desayuno de confraternidad' 
 			},
 			{ 
 				hora: '10:30', 
-				titulo: 'Programa de Ceremonia Central', 
+				titulo: 'Ceremonia Central', 
 				detalle: '-' 
 			},
 			{
@@ -88,6 +81,7 @@ export default function Programa() {
 				</div>
 			</div>
 
+			<div className="pt15 mb10"></div>
 
 			<div className="slide-inner">
 				<div className="section-eyebrow">7 de octubre</div>

@@ -197,7 +197,6 @@ export default function VideoInv() {
 				</div>
 
 				<p className="video-caption">
-					Un mensaje especial de nuestro Gerente Regional con motivo del{' '}
 					<span className="destacado">LXIX Aniversario Institucional</span>.
 				</p>
 			</div>
