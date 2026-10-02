@@ -158,8 +158,8 @@ export default function InvitacionSobre({
 							onAnimationEnd={handleLetterAnimationEnd}
 						>
 
-							
-							<div className="hero-top mt30">
+							<div className="hero-top pt30">
+								<div className='pt15'/>
 								<LazyMount>
 									<img src={logoImg} alt="" />
 								</LazyMount>
