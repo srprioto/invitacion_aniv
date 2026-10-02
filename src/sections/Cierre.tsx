@@ -2,11 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import ScrollHint from "@/components/ScrollHint";
-import LazyMount from '@/components/LazyMount';
+
 
 const FOTOS_CIERRE = [
-	'/images/nosotros/samu.png',
 	'/images/nosotros/nostro1.png',
+	'/images/nosotros/samu.jpeg',
+	'/images/nosotros/1.jpeg',
+	'/images/nosotros/2.jpeg',
+	'/images/nosotros/3.jpeg',
+	'/images/nosotros/4.jpeg',
+	'/images/nosotros/5.jpeg',
+	'/images/nosotros/6.jpeg',
 	
 ];
 
@@ -38,15 +44,13 @@ export default function Cierre() {
 				<div className="cierre-grid">
 					<div className="cierre-foto">
 						{FOTOS_CIERRE.map((src, i) => (
-							<LazyMount>
-								<img
-									key={src + i}
-									src={src}
-									alt="Equipo GERESA unido"
-									className={`cierre-foto__img ${i === index ? 'is-active' : ''}`}
-									aria-hidden={i !== index}
-								/>
-							</LazyMount>
+							<img
+								key={src + i}
+								src={src}
+								alt="Equipo GERESA unido"
+								className={`cierre-foto__img ${i === index ? 'is-active' : ''}`}
+								aria-hidden={i !== index}
+							/>
 						))}
 						<div className="cierre-foto__overlay" aria-hidden="true" />
 						<div className="cierre-foto__frame" aria-hidden="true" />

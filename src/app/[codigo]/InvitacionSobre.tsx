@@ -7,7 +7,7 @@ import InvitacionClient from './InvitacionClient';
 
 
 import { useAssetPreload } from '@/components/Preloader';
-import LazyMount from '@/components/LazyMount';
+import { toggleFullscreen } from '@/assets/fns/FullScn';
 
 // ---------- Textos editables ----------
 const TEXTOS = {
@@ -107,9 +107,11 @@ export default function InvitacionSobre({
 		}
 	}, [stage]);
 
+	
 	const handleOpen = () => {
 		if (!isReady || stage !== 'closed') return;
 		setStage('opening');
+		toggleFullscreen()
 	};
 
 	const handleLetterAnimationEnd = (e: React.AnimationEvent<HTMLDivElement>) => {
@@ -160,9 +162,7 @@ export default function InvitacionSobre({
 
 							<div className="hero-top pt30">
 								<div className='pt15'/>
-								<LazyMount>
-									<img src={logoImg} alt="" />
-								</LazyMount>
+								<img src={logoImg} alt="" />
 								<div className="logo-geresa">GERESA CUSCO</div>
 								<div className="hero-year">2026</div>
 							</div>

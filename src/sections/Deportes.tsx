@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import ScrollHint from "@/components/ScrollHint";
 import TapHint from '@/components/TapHint';
-import LazyMount from '@/components/LazyMount';
 
 const copaGeresa = [
 	'/images/campeonato/1.jpg',
@@ -275,24 +274,20 @@ export default function Deportes() {
 						>
 							<div className="modal-image-wrap">
 								{imgPrevia !== null && (
-									<LazyMount>
-										<img
-											key={`prev-${imgPrevia}`}
-											src={data.imagenes[imgPrevia]}
-											alt=""
-											className="modal-image modal-image--prev"
-											aria-hidden="true"
-										/>
-									</LazyMount>
-								)}
-								<LazyMount>
 									<img
-										key={`curr-${imgActual}`}
-										src={data.imagenes[imgActual]}
-										alt={`${data.titulo} - imagen ${imgActual + 1}`}
-										className="modal-image modal-image--active"
+										key={`prev-${imgPrevia}`}
+										src={data.imagenes[imgPrevia]}
+										alt=""
+										className="modal-image modal-image--prev"
+										aria-hidden="true"
 									/>
-								</LazyMount>
+								)}
+								<img
+									key={`curr-${imgActual}`}
+									src={data.imagenes[imgActual]}
+									alt={`${data.titulo} - imagen ${imgActual + 1}`}
+									className="modal-image modal-image--active"
+								/>
 
 								<div className="modal-counter">
 									{imgActual + 1} / {data.imagenes.length}

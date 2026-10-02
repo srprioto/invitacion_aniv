@@ -1,6 +1,8 @@
 // src/app/[codigo]/InvitacionClient.tsx
 "use client";
 
+import { toggleFullscreen } from "@/assets/fns/FullScn";
+import AudioPlayer from "@/components/AudioPlayer";
 import NavRight from "@/components/NavRight";
 import Cierre from "@/sections/Cierre";
 import Deportes from "@/sections/Deportes";
@@ -50,6 +52,16 @@ export default function InvitacionClient({ invitado }: Props) {
 		<>
 			<NavRight containerRef={containerRef} navSection={NAV_SECTIONS} />
 
+			<div 
+				className="btn_fullscn"
+				role="button" 
+				tabIndex={0} 
+				onClick={() => toggleFullscreen()}
+			>
+				⛶
+			</div>
+
+
 			<main className="snap-container" id="snap" ref={containerRef}>
 				<Hero />
 				<Invitacion nombreInv={invitado.nombre} />
@@ -63,6 +75,10 @@ export default function InvitacionClient({ invitado }: Props) {
 				<Cierre />
 				<Footer />
 			</main>
+
+			
+			<AudioPlayer src="/audio/sonidito.mp3" volume={55} loop />
+
 		</>
 	);
 }
