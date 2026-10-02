@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import ScrollHint from "@/components/ScrollHint";
 import TapHint from '@/components/TapHint';
+import LazyMount from '@/components/LazyMount';
 
 const copaGeresa = [
 	'/images/campeonato/1.jpg',
@@ -30,7 +31,6 @@ const srMilagros = [
 	'/images/novena/8.jpeg',
 	'/images/novena/9.jpeg',
 	'/images/novena/10.jpeg',
-
 ];
 
 const concurDanzas = [
@@ -82,10 +82,12 @@ const MODALES: Record<string, ModalData> = {
 
 const AUTOPLAY_INTERVAL = 3000;
 const RESUME_DELAY = 3000;
+const FADE_MS = 900;
 
 export default function Deportes() {
 	const [modalAbierto, setModalAbierto] = useState<ModalKey>(null);
 	const [imgActual, setImgActual] = useState(0);
+	const [imgPrevia, setImgPrevia] = useState<number | null>(null);
 	const [paused, setPaused] = useState(false);
 
 	const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -95,12 +97,14 @@ export default function Deportes() {
 	const abrirModal = (key: ModalKey) => {
 		setModalAbierto(key);
 		setImgActual(0);
+		setImgPrevia(null);
 		setPaused(false);
 	};
 
 	const cerrarModal = () => {
 		setModalAbierto(null);
 		setImgActual(0);
+		setImgPrevia(null);
 		setPaused(false);
 		if (resumeTimer.current) {
 			clearTimeout(resumeTimer.current);
@@ -108,11 +112,15 @@ export default function Deportes() {
 		}
 	};
 
-	// Pausa temporal con auto-reanudación
 	const pausarTemporal = () => {
 		setPaused(true);
 		if (resumeTimer.current) clearTimeout(resumeTimer.current);
 		resumeTimer.current = setTimeout(() => setPaused(false), RESUME_DELAY);
+	};
+
+	const cambiarImagen = (nueva: number) => {
+		setImgPrevia(imgActual);
+		setImgActual(nueva);
 	};
 
 	// ============ AUTOPLAY ============
@@ -121,11 +129,19 @@ export default function Deportes() {
 		if (paused) return;
 
 		const timer = setInterval(() => {
+			setImgPrevia(imgActual);
 			setImgActual((i) => (i + 1) % data.imagenes.length);
 		}, AUTOPLAY_INTERVAL);
 
 		return () => clearInterval(timer);
-	}, [modalAbierto, data, paused]);
+	}, [modalAbierto, data, paused, imgActual]);
+
+	// ============ LIMPIAR IMAGEN PREVIA ============
+	useEffect(() => {
+		if (imgPrevia === null) return;
+		const t = setTimeout(() => setImgPrevia(null), FADE_MS);
+		return () => clearTimeout(t);
+	}, [imgPrevia, imgActual]);
 
 	// ============ ESC + bloquear scroll de fondo ============
 	useEffect(() => {
@@ -159,9 +175,9 @@ export default function Deportes() {
 
 		if (Math.abs(delta) > threshold) {
 			if (delta < 0) {
-				setImgActual((i) => (i + 1) % data.imagenes.length);
+				cambiarImagen((imgActual + 1) % data.imagenes.length);
 			} else {
-				setImgActual((i) => (i - 1 + data.imagenes.length) % data.imagenes.length);
+				cambiarImagen((imgActual - 1 + data.imagenes.length) % data.imagenes.length);
 			}
 			pausarTemporal();
 		}
@@ -258,12 +274,25 @@ export default function Deportes() {
 							onTouchEnd={onTouchEnd}
 						>
 							<div className="modal-image-wrap">
-								<img
-									key={data.imagenes[imgActual]}
-									src={data.imagenes[imgActual]}
-									alt={`${data.titulo} - imagen ${imgActual + 1}`}
-									className="modal-image"
-								/>
+								{imgPrevia !== null && (
+									<LazyMount>
+										<img
+											key={`prev-${imgPrevia}`}
+											src={data.imagenes[imgPrevia]}
+											alt=""
+											className="modal-image modal-image--prev"
+											aria-hidden="true"
+										/>
+									</LazyMount>
+								)}
+								<LazyMount>
+									<img
+										key={`curr-${imgActual}`}
+										src={data.imagenes[imgActual]}
+										alt={`${data.titulo} - imagen ${imgActual + 1}`}
+										className="modal-image modal-image--active"
+									/>
+								</LazyMount>
 
 								<div className="modal-counter">
 									{imgActual + 1} / {data.imagenes.length}
@@ -278,7 +307,7 @@ export default function Deportes() {
 									type="button"
 									className={`modal-dot ${i === imgActual ? 'is-active' : ''}`}
 									onClick={() => {
-										setImgActual(i);
+										cambiarImagen(i);
 										pausarTemporal();
 									}}
 									aria-label={`Ir a imagen ${i + 1}`}

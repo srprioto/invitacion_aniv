@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import ScrollHint from "@/components/ScrollHint";
+import LazyMount from '@/components/LazyMount';
 
 const FOTOS_CIERRE = [
 	'/images/nosotros/samu.png',
@@ -37,13 +38,15 @@ export default function Cierre() {
 				<div className="cierre-grid">
 					<div className="cierre-foto">
 						{FOTOS_CIERRE.map((src, i) => (
-							<img
-								key={src + i}
-								src={src}
-								alt="Equipo GERESA unido"
-								className={`cierre-foto__img ${i === index ? 'is-active' : ''}`}
-								aria-hidden={i !== index}
-							/>
+							<LazyMount>
+								<img
+									key={src + i}
+									src={src}
+									alt="Equipo GERESA unido"
+									className={`cierre-foto__img ${i === index ? 'is-active' : ''}`}
+									aria-hidden={i !== index}
+								/>
+							</LazyMount>
 						))}
 						<div className="cierre-foto__overlay" aria-hidden="true" />
 						<div className="cierre-foto__frame" aria-hidden="true" />

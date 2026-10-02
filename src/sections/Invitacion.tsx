@@ -1,3 +1,4 @@
+import LazyMount from "@/components/LazyMount";
 import ScrollHint from "@/components/ScrollHint";
 
 interface prop {
@@ -39,7 +40,9 @@ export default function Invitacion({ nombreInv }:prop) {
 					<div className="box_foto_secundaria">
 						<div className="section-eyebrow">Mayordomos 2026</div>
 						<div className="foto-secundaria">
-							<img src={DEFAULT_PHOTO} alt="Equipo institucional" />
+							<LazyMount>
+								<img src={DEFAULT_PHOTO} alt="Equipo institucional" />
+							</LazyMount>
 						</div>
 					</div>
 				</div>

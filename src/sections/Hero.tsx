@@ -1,4 +1,5 @@
 import BtnQr from "@/components/BtnQr";
+import LazyMount from "@/components/LazyMount";
 import ScrollHint from "@/components/ScrollHint";
 
 export default function Hero() {
@@ -21,7 +22,9 @@ export default function Hero() {
 			<div className="texture-dots" />
 
 			<div className="hero-top">
-				<img src={logoImg} alt="" />
+				<LazyMount>
+					<img src={logoImg} alt="" />
+				</LazyMount>
 				<div className="logo-geresa">GERESA CUSCO</div>
 				<div className="hero-year">2026</div>
 			</div>
@@ -39,7 +42,7 @@ export default function Hero() {
 				</div>
 
 				<div className="hero-photo">
-					<img src={DEFAULT_PHOTO} alt="Señor de los Milagros" />
+					<LazyMount><img src={DEFAULT_PHOTO} alt="Señor de los Milagros" /></LazyMount>
 					<div className="hero-photo-overlay" />
 				</div>
 			</div>

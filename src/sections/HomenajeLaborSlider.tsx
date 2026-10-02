@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import ScrollHint from '@/components/ScrollHint';
+import LazyMount from '@/components/LazyMount';
 
 interface Homenajeado {
 	nombre: string;
@@ -131,7 +132,7 @@ export default function HomenajeLaborSlider() {
 							{personas.map(({ nombre, foto }) => (
 								<div className="card-trabajador" key={nombre}>
 									<div className="card-foto">
-										<img src={foto} alt="" />
+										<LazyMount><img src={foto} alt="" /></LazyMount>
 									</div>
 									<div className="card-info">
 										<div className="card-nombre">{nombre}</div>
