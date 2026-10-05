@@ -17,52 +17,42 @@ const HOMENAJEADOS: Homenajeado[] = [
 	{ 
 		nombre: 'Jesús Manuel Añanca Zuniga',   
 		foto: '/images/personas/70/jesus_ananca.jpg',
-
 	},
 	{ 
 		nombre: 'Ruth Marina Baca Mendoza',     
 		foto: '/images/personas/70/ruth_baca.jpg',
-
 	},
 	{ 
 		nombre: 'Clorinda Callahui Rios',       
 		foto: '/images/personas/70/clorinda_callahui.png',
-
 	},
 	{ 
 		nombre: 'Fidel Marcos Farfan Rimachi',  
 		foto: '/images/personas/70/fidel_farfan.jpeg',
-
 	},
 	{ 
 		nombre: 'Isabel Fuentes Carayhua',      
 		foto: '/images/personas/70/isabel_fuentes.jpeg',
-
 	},
 	{ 
 		nombre: 'Ketty Gladys Monge Casafranca',
 		foto: '/images/personas/70/ketty_gladis.png',
-
 	},
 	{ 
 		nombre: 'Hermenegilda Navarro Amaru',   
 		foto: '/images/personas/70/hermene_navarro.png',
-
 	},
 	{ 
 		nombre: 'Jorge Otazu Pillco',           
 		foto: '/images/personas/70/jorge_otazu.png',
-
 	},
 	{ 
 		nombre: 'Antonio Pauccar Huaman',       
 		foto: '/images/personas/70/antonio_paucar.png',
-
 	},
 	{ 
 		nombre: 'Teofilo Salas Pantigozo',      
 		foto: '/images/personas/70/teofilo_salas.jpeg',
-
 	},
 ];
 
@@ -98,10 +88,16 @@ export default function HomenajeLabor() {
 
 			const cardWidth = card.offsetWidth + 14;
 			const maxScroll = el.scrollWidth - el.clientWidth;
-			let next = el.scrollLeft + cardWidth;
 
-			if (next >= maxScroll - 4) next = 0;
+			// Ya estamos al final → volver al inicio
+			if (el.scrollLeft >= maxScroll - 4) {
+				el.scrollTo({ left: 0, behavior: 'smooth' });
+				lastScrollLeft = 0;
+				return;
+			}
 
+			// Avanzar una card sin pasarnos del final
+			const next = Math.min(el.scrollLeft + cardWidth, maxScroll);
 			el.scrollTo({ left: next, behavior: 'smooth' });
 			lastScrollLeft = next;
 		}, 2000);

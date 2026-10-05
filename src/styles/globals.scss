@@ -400,7 +400,7 @@ $morado-hover: #7148a8;
 
 .goQR {
   position: absolute;
-  bottom: 15px;
+  bottom: 96px;
   right: 20px;
   z-index: 10;
 
@@ -2521,25 +2521,25 @@ $dorado-claro: #f0d98c;
 
 // autoplay
 .audio-player {
-	position: fixed;
-	bottom: 20px;      // separación desde abajo
-	left: 20px;        // separación desde la izquierda
-	z-index: 50;       // por encima del contenido
+	z-index: 50;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+	.audio-player__btn {
+		cursor: pointer;
+		border: none;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		font-size: 30px;
+		display: flex;
+		justify-content: center;
+		background-color: #7e697d;
+		color: #321b4c;
+	}
 }
 
-.audio-player__btn {
-    cursor: pointer;
-    border: none;
-    border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #7e697d;
-	color: #321b4c;
-}
+
 
 @media (max-width: 480px) {
 
