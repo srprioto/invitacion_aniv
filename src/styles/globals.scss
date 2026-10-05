@@ -132,6 +132,7 @@ body {
 	margin: 0 auto;
 	position: relative;
 	z-index: 2;
+	    text-align: center;
 }
 
 // ============ NAV DOTS ============
@@ -1797,12 +1798,14 @@ $divisor: rgba(43, 29, 18, 0.08);
 }
 
 .qr-container {
-	display: inline-block;
-	background: $blanco;
-	padding: 18px;
-	border-radius: 16px;
-	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-	position: relative;
+    background: #fff;
+    border-radius: 16px;
+    align-items: center;
+    padding: 18px;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 20px 50px #0006;
+    max-width: 300px;
 
 	&::before {
 		content: '';
