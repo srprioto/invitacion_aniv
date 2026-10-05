@@ -9,6 +9,10 @@ const invitados: Invitado[] = [
 		codigo: "666ooo"
 	},
 	{
+		nombre: "Dr. Jorge Omar Farfán Ochoa",
+		codigo: "qXOgcf"
+	},
+	{
 		nombre: "JAIME JUCULACA CHURA",
 		codigo: "04WYd3"
 	},
