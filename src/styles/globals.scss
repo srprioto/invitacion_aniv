@@ -44,6 +44,38 @@ $font-display: var(--font-cormorant), 'Cormorant Garamond', serif;
 	}
 }
 
+// ========== DESKTOP =========
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ========== GENERAL =========
 .linea_inf{
 	background-color: $morado-suave;
@@ -521,6 +553,7 @@ $morado-hover: #7148a8;
 .invitacion-texto-wrap {
 	text-align: center;
 	.nombre-inv{
+		text-align: center;
 		margin: 5px 0 15px 0;
 		padding: 10px 0;
 		background-color: #f9f6f0;

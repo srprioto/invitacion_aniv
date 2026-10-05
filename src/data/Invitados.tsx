@@ -163,7 +163,7 @@ const invitados: Invitado[] = [
 
 
 
-{
+	{
 		codigo: "6TIBZr",
 		nombre: "MARLENE ABRILL GAMARRA"
 	},
@@ -1315,6 +1315,78 @@ const invitados: Invitado[] = [
 		codigo: "qQe75O",
 		nombre: "EDITH ARAUJO BOZA"
 	},
+
+	{
+		codigo: "qVMyMR",	
+		nombre: "INDIRA CRISHTELL CISNEROS GAMARRA"
+	},
+	{
+		codigo: "qe8wok",	
+		nombre: "RAUL GOMEZ PAREDES"
+	},
+	{
+		codigo: "qfDw0G",	
+		nombre: "YOVANA HUANACO LABRA"
+	},
+	{
+		codigo: "qpHyEc",	
+		nombre: "HUGO CARRILLO JHUVILK"
+	},
+	{
+		codigo: "qwS7jP",	
+		nombre: "VANESSA ALEJANDRA NINA MARAÑON"
+	},
+	{
+		codigo: "qxRYlt",	
+		nombre: "LUCEIDA SHARMELY ORTIZ CRUZ"
+	},
+	{
+		codigo: "rCrd2M",	
+		nombre: "SERGIO ROJAS SOTELO"
+	},
+	{
+		codigo: "rEH3oG",	
+		nombre: "WILLIAM YUJRA LOPEZ"
+	},
+	{
+		codigo: "rY8SUK",	
+		nombre: "JUAN HEBERCRUZ JARA"
+	},
+	{
+		codigo: "rYN4In",	
+		nombre: "NOHEMY JAKELYNE DIAZ CONDORI"
+	},
+	{
+		codigo: "rc8VcU",	
+		nombre: "YESSICA RIOS TUIRO"
+	},
+	{
+		codigo: "rdrUxy",	
+		nombre: "EDWIN LISANDRO MESICANO PASACA"
+	},
+	{
+		codigo: "sOD4gn",	
+		nombre: "RAUL MORENO PARICOTO"
+	},
+	{
+		codigo: "schCna",	
+		nombre: "ALEX ZANDER OVIEDO CORDOVA"
+	},
+	{
+		codigo: "skBkvK",	
+		nombre: "OSCAR TRUJILLO OQUENDO"
+	},
+	{
+		codigo: "sqSKsU",	
+		nombre: "LUCIO ALVAREZ ARRIAGA"
+	},
+	{
+		codigo: "syVDtu",	
+		nombre: "HERMELINDA HUERTA ROJAS"
+	},
+
+
+
 
 
 
