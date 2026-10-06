@@ -1385,6 +1385,23 @@ const invitados: Invitado[] = [
 		nombre: "HERMELINDA HUERTA ROJAS"
 	},
 
+	{
+		codigo: "tCBYdx",	
+		nombre: "Dr Hugo Ramos Galdos"
+	},
+	{
+		codigo: "tNPYPu",	
+		nombre: "Dra Milagros Pinelo Apaza"
+	},
+	{
+		codigo: "tP1jY0",	
+		nombre: "Dr Justo German Vizcarra Loayza"
+	},
+	{
+		codigo: "thBwfg",	
+		nombre: "Dr Javier Cjuno Vera"
+	},
+
 
 
 
