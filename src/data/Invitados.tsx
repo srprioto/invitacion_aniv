@@ -1586,6 +1586,189 @@ const invitados: Invitado[] = [
 
 
 
+	{
+		codigo: "z9xga9",	
+		nombre: "YASMANY CONCEPCION MOSCOSO OLIVERA"
+	},
+	{
+		codigo: "zPVWNd",	
+		nombre: "LIZ KATHERIN FLORES ORTIZ"
+	},
+	{
+		codigo: "zSSRti",	
+		nombre: "SHAILA YULIANA LUNA SANTA CRUZ"
+	},
+	{
+		codigo: "zVl01W",	
+		nombre: "MILTON CESAR PECHUGA MELGAR"
+	},
+	{
+		codigo: "zcLkqk",	
+		nombre: "INGRID CAREN CHOQUE INCACUTIPA"
+	},
+	{
+		codigo: "zjEdAZ",	
+		nombre: "VANESSA LYNDA TACO SUTTA"
+	},
+	{
+		codigo: "zlcfNq",	
+		nombre: "ERIKA CHALLCO MERMA"
+	},
+	{
+		codigo: "zwfP7q",	
+		nombre: "RUBEN BASCOPE QUISPE"
+	},
+	{
+		codigo: "zyEstp",	
+		nombre: "YASMINE BATALLANOS ENCISO"
+	},
+	{
+		codigo: "TCvzP5",	
+		nombre: "HERMELINDA PAREJA GUZMAN"
+	},
+	{
+		codigo: "pE5Usq",	
+		nombre: "NANCY MEZA QUISPE"
+	},
+	{
+		codigo: "zkzock",	
+		nombre: "KARLA RAQUEL VALER VELASQUEZ"
+	},
+	{
+		codigo: "C3Sw8i",	
+		nombre: "NOEMI MARCAVILLACA CAZORLA"
+	},
+	{
+		codigo: "eLU1xy",	
+		nombre: "FREDY DAMIAN LAROTA CUITO"
+	},
+	{
+		codigo: "Z34VV7",	
+		nombre: "EDITH CHACON ORTIZ"
+	},
+	{
+		codigo: "Wdz2dq",	
+		nombre: "WILBER ROMAN LANTARON"
+	},
+	{
+		codigo: "oGanYh",	
+		nombre: "LARISSA LIZSELITH DEZA CASTILLA"
+	},
+	{
+		codigo: "erSAMm",	
+		nombre: "ABDIAS QUISPE HUARAKCA"
+	},
+	{
+		codigo: "SYCouq",	
+		nombre: "JONI EDWIN MUÑOZ GARCIA"
+	},
+	{
+		codigo: "821PVC",	
+		nombre: "ZHANDA JULEYSY YABAR FARFAN"
+	},
+	{
+		codigo: "92w6fK",	
+		nombre: "PALMA VELARDE FLORES"
+	},
+	{
+		codigo: "JDIgCh",	
+		nombre: "YNES OLIVIA ALVARADO SILVA"
+	},
+	{
+		codigo: "ARRizf",	
+		nombre: "ROXANA MAMANI RAMOS"
+	},
+	{
+		codigo: "vBtPrH",	
+		nombre: "IVAN TELLO MORALES"
+	},
+	{
+		codigo: "yqlPVo",	
+		nombre: "ISAAC GREGORY CASTILLO CASTRO"
+	},
+	{
+		codigo: "cBc92V",	
+		nombre: "JENNIE PATRICIA MAYAUTE ALLCA"
+	},
+	{
+		codigo: "YDYfjL",	
+		nombre: "JUDITH MARCELA CAHUANA MENDOZA"
+	},
+	{
+		codigo: "6AnfLb",	
+		nombre: "ROSALI TORRES BELLIDO"
+	},
+	{
+		codigo: "DYTD9w",	
+		nombre: "SAUL WILDEMAR GUERRERO MAMANI"
+	},
+	{
+		codigo: "AbWB0k",	
+		nombre: "MARITZA IRENE CASTRO HUAJARDO"
+	},
+	{
+		codigo: "OCiJrY",	
+		nombre: "ISABEL FUENTES CARAYHUA"
+	},
+	{
+		codigo: "wHJJej",	
+		nombre: "ROXANA MAMANI RAMOS"
+	},
+	{
+		codigo: "LaEbca",	
+		nombre: "IVAN TELLO MORALES"
+	},
+	{
+		codigo: "6cj92K",	
+		nombre: "ISAAC GREGORI CASTILLO CASTRO"
+	},
+	{
+		codigo: "V9LtHe",	
+		nombre: "ALVARO TRUJILLO VEGA"
+	},
+	{
+		codigo: "lhE9v3",	
+		nombre: "YNES OLIVIA ALVARADO SILVA"
+	},
+	{
+		codigo: "SnoMe8",	
+		nombre: "JENNIE PATRICIA MAYAUTE ALLCA"
+	},
+	{
+		codigo: "KMuJn6",	
+		nombre: "JUDITH MARCELA CAHUANA MENDOZA"
+	},
+	{
+		codigo: "bujAPf",	
+		nombre: "ROSALI TORRES BELLIDO"
+	},
+	{
+		codigo: "D6HzTm",	
+		nombre: "JHONNY ESCOBAR LOPEZ"
+	},
+	{
+		codigo: "aR9Ay4",	
+		nombre: "LIDA ZAMALLOA CHAMORRO"
+	},
+	{
+		codigo: "bEHZU7",	
+		nombre: "SAUL WILDEMAR GUERRERO MAMANI"
+	},
+
+
+
+	{
+		codigo: "hYT6iI",	
+		nombre: "FLOR ROSA ARANDIA QUINO"
+	},
+	{
+		codigo: "FOpB1C",	
+		nombre: "ANTORI ALEGRE"
+	},
+
+
+
+
 
 
 
