@@ -1574,7 +1574,10 @@ const invitados: Invitado[] = [
 		nombre: "Marco Antonio Vivanco Bareto"
 	},
 
-
+	{
+		codigo: "z9kGJI",	
+		nombre: "Aníbal Mateo Hurtado Gálvez"
+	},
 
 
 
