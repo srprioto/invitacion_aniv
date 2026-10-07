@@ -1766,19 +1766,19 @@ const invitados: Invitado[] = [
 		nombre: "ANTORI ALEGRE"
 	},
 
-	
+
 
 	{
-		codigo: "zSSRti",	
+		codigo: "LaEbca",	
 		nombre: "Sharmely castillo puma"
 	},
 
 	{
-		codigo: "bxxgBX",	
+		codigo: "wHJJej",	
 		nombre: "VILMA SALLO HUALLPAYUNCA"
 	},
 	{
-		codigo: "zVl01W",	
+		codigo: "6cj92K",	
 		nombre: "Samuel hiallpa Sullca"
 	},
 
