@@ -1755,8 +1755,6 @@ const invitados: Invitado[] = [
 		nombre: "SAUL WILDEMAR GUERRERO MAMANI"
 	},
 
-
-
 	{
 		codigo: "hYT6iI",	
 		nombre: "FLOR ROSA ARANDIA QUINO"
@@ -1781,8 +1779,14 @@ const invitados: Invitado[] = [
 		codigo: "bxxgBX",	
 		nombre: "Samuel hiallpa Sullca"
 	},
-
-
+	{
+		codigo: "OAmpAI",	
+		nombre: "Jose Lazo"
+	},
+	{
+		codigo: "N79Y3S",	
+		nombre: "Isaias Ajahuana Finas"
+	},
 
 
 
