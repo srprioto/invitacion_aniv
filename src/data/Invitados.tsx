@@ -523,10 +523,10 @@ const invitados: Invitado[] = [
 		codigo: "Ml9oa6",
 		nombre: "LISSETTE HUARCA HINOJOSA"
 	},
-	{
-		codigo: "MroTBh",
-		nombre: "ANIBAL MATEO HURTADO GALVEZ"
-	},
+	// {
+	// 	codigo: "MroTBh",
+	// 	nombre: "ANIBAL MATEO HURTADO GALVEZ"
+	// },
 	{
 		codigo: "Muu7Vu",
 		nombre: "KERLY MELANIE IRRAZABAL CERVANTES"
@@ -543,10 +543,10 @@ const invitados: Invitado[] = [
 		codigo: "NAkxzG",
 		nombre: "CLAUDIO ANGEL JARITA CUÑAS"
 	},
-	{
-		codigo: "NHb7QU",
-		nombre: "MARIA GRISELDA LASTEROS AIQUIPA"
-	},
+	// {
+	// 	codigo: "NHb7QU",
+	// 	nombre: "MARIA GRISELDA LASTEROS AIQUIPA"
+	// },
 	{
 		codigo: "NcUL8g",
 		nombre: "EUSEBIO LAURENTE TTITO"
@@ -1408,7 +1408,7 @@ const invitados: Invitado[] = [
 
 	{
 		codigo: "u52L4b",	
-		nombre: "Belzi Justiniani"
+		nombre: "BELZI LUZ JUSTINIANI MEJIA"
 	},
 	{
 		codigo: "uHJcSs",	
@@ -1434,10 +1434,10 @@ const invitados: Invitado[] = [
 		codigo: "uw4UFn",	
 		nombre: "JUANA CRISTINA BUSTINZA LOPEZ"
 	},
-	{
-		codigo: "v8wu1a",	
-		nombre: "BELZI LUZ JUSTINIANI MEJIA"
-	},
+	// {
+	// 	codigo: "v8wu1a",	
+	// 	nombre: "BELZI LUZ JUSTINIANI MEJIA"
+	// },
 	{
 		codigo: "vEFg0F",	
 		nombre: "ERIK JOHN RIVERA ILLACHURA"
