@@ -1406,230 +1406,194 @@ const invitados: Invitado[] = [
 
 
 
-
-
-
-
 	{
 		codigo: "u52L4b",	
 		nombre: "Belzi Justiniani"
 	},
-
-
 	{
 		codigo: "uHJcSs",	
 		nombre: "MATGOT HUAYHUAS MANYA"
 	},
-
-
 	{
 		codigo: "uU7r6b",	
 		nombre: "JUANA CRISTINA BUSTINZA LOPEZ"
 	},
-
-
 	{
 		codigo: "uc7XHU",	
 		nombre: "RICHARD QUISPE ANDRADE"
 	},
-
-
 	{
 		codigo: "uiUQJz",	
 		nombre: "CECILIO TACURI SUVELETA"
 	},
-
-
 	{
 		codigo: "ury4lV",	
 		nombre: "ALEXANDER QUISPE QUINTANILLA"
 	},
-
-
 	{
 		codigo: "uw4UFn",	
 		nombre: "JUANA CRISTINA BUSTINZA LOPEZ"
 	},
-
-
 	{
 		codigo: "v8wu1a",	
 		nombre: "BELZI LUZ JUSTINIANI MEJIA"
 	},
-
-
 	{
 		codigo: "vEFg0F",	
 		nombre: "ERIK JOHN RIVERA ILLACHURA"
 	},
-
-
 	{
 		codigo: "vExuhd",	
 		nombre: "GABRIELA QUISPE SULLCA"
 	},
-
-
 	{
 		codigo: "vH2ASy",	
 		nombre: "NESTOR PRIETO GUTIERREZ"
 	},
-
-
 	{
 		codigo: "vUt6OX",	
 		nombre: "ROCIO MORA HUAMPA"
 	},
-
-
 	{
 		codigo: "vo078q",	
 		nombre: "MABEL KAREN AUSEJO MEJIA"
 	},
-
-
 	{
 		codigo: "w1NBWM",	
 		nombre: "MARINA QUIROGA CANAL"
 	},
-
-
 	{
 		codigo: "w5EBpV",	
 		nombre: "ANA GABI MOLINA MARQUEZ"
 	},
-
-
 	{
 		codigo: "w6J6pr",	
 		nombre: "EDUARDO LOPEZ RIOS"
 	},
-
-
 	{
 		codigo: "wCIsh2",	
 		nombre: "CESAR RANDY CRUZ LUPA"
 	},
-
-
 	{
 		codigo: "wEWaoG",	
 		nombre: "EULER TOMAS VELASCO ESCALANTE"
 	},
-
-
 	{
 		codigo: "wOCEBt",	
 		nombre: "Carla Ivania Fernandez Pilco"
 	},
-
-
 	{
 		codigo: "wOTfuB",	
 		nombre: "JOSUE EMILIO TARRAGA SALAS"
 	},
-
-
 	{
 		codigo: "wcjI7T",	
 		nombre: "MARGOT HUAYHUAS MANYA"
 	},
-
-
 	{
 		codigo: "wqnc2P",	
 		nombre: "SUE MARILIA HUAMAN PEÑA"
 	},
-
-
 	{
 		codigo: "xEj5IH",	
 		nombre: "FLOR DE MARÍA MOCION"
 	},
-
-
 	{
 		codigo: "xGQ9KC",	
 		nombre: "JANNIKE PINARES CASAVERDE"
 	},
-
-
 	{
 		codigo: "xGlsut",	
 		nombre: "WILLIAM ARRIAGA HUAMANTTICA"
 	},
-
-
 	{
 		codigo: "xOQ4er",	
 		nombre: "JACKELINE DEL PILAR SALAZAR GUEVARA"
 	},
-
-
 	{
 		codigo: "xie4A1",	
 		nombre: "SAUL JESUS GARCIA LLERENA"
 	},
-
-
 	{
 		codigo: "xiuIaa",	
 		nombre: "LAURA INES JURURO SANI"
 	},
-
-
 	{
 		codigo: "xnLQbL",	
 		nombre: "JANNIKE PINARES CASAVERDE"
 	},
-
-
 	{
 		codigo: "xq3Vpz",	
 		nombre: "NOEMI MARCAVILLACA CAZORLA"
 	},
-
-
 	{
 		codigo: "yI5KvL",	
 		nombre: "EDITH CHACON ORTIZ"
 	},
-
-
 	{
 		codigo: "yQpthv",	
 		nombre: "FREDY DAMIAN LAROTA CUITO"
 	},
-
-
 	{
 		codigo: "ynwXLR",	
 		nombre: "THELMA TERESA TORRES SANCHEZ"
 	},
-
-
 	{
 		codigo: "ynwp2o",	
 		nombre: "MYRCIA LUZ QUEA JUANITO"
 	},
-
-
 	{
 		codigo: "yzzfx1",	
 		nombre: "ROCIO QUISPE AQUINO"
 	},
-
-
 	{
 		codigo: "z0Ndhp",	
 		nombre: "CECILIA ESCALANTE DURAND"
 	},
-
-
 	{
 		codigo: "z0hBF7",	
 		nombre: "JACKELINE DEL PILAR SALAZAR GUEVARA"
 	},
+
+
+
+	{
+		codigo: "trCy27",	
+		nombre: "Maria Milagros Caballero Chacon"
+	},
+	{
+		codigo: "ty9tqi",	
+		nombre: "Guadalupe Sol Lima Lima"
+	},
+	{
+		codigo: "tz6TJX",	
+		nombre: "Tehobania Meza Paredes "
+	},
+	{
+		codigo: "u3ivWz",	
+		nombre: "Marco Antonio Vivanco Bareto"
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
