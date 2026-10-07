@@ -373,7 +373,7 @@ const invitados: Invitado[] = [
 	},
 	{
 		codigo: "GdNOQp",
-		nombre: "JESUS ORLANDO CHUQUIHUACCHA CABRERA"
+		nombre: "JESUS ROLANDO CHUQUIHUACCHA CABRERA"
 	},
 	{
 		codigo: "GdlPT0",
