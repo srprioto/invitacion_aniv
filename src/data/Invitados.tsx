@@ -1404,8 +1404,6 @@ const invitados: Invitado[] = [
 
 
 
-
-
 	{
 		codigo: "u52L4b",	
 		nombre: "BELZI LUZ JUSTINIANI MEJIA"
@@ -1578,17 +1576,10 @@ const invitados: Invitado[] = [
 		codigo: "z9kGJI",	
 		nombre: "Aníbal Mateo Hurtado Gálvez"
 	},
-
-
-
-
-
-
-
-
-
-
-
+	{
+		codigo: "z9xga9",
+		nombre: "Karol Consuelo Roman Carpio"
+	},
 
 
 
